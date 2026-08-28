@@ -76,7 +76,7 @@ Le pipeline enchaîne trois étapes : `score.py` (scores et chiffres clés), `jo
   title  = {Les déserts de l'audioprothèse en France : scoring d'opportunité à la maille communale},
   year   = {2026},
   doi: 10.5281/zenodo.22146816
-  url    = {https://doi.org/10.5281/zenodo.XXXXXXX}
+  url    = {[https://doi.org/10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.22146816)}
 }
 ```
 
