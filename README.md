@@ -2,9 +2,7 @@
 
 Modèle de scoring géographique identifiant les communes françaises prioritaires pour l'implantation d'un centre d'audioprothèse, à partir de données publiques agrégées à la maille communale.
 
-<!-- Badge DOI Zenodo — à ajouter après la release v1.0.0 :
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
--->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22146816.svg)](https://doi.org/10.5281/zenodo.22146816)
 
 ## Résultats
 
@@ -77,7 +75,7 @@ Le pipeline enchaîne trois étapes : `score.py` (scores et chiffres clés), `jo
   author = {Soussan, Nathan},
   title  = {Les déserts de l'audioprothèse en France : scoring d'opportunité à la maille communale},
   year   = {2026},
-  doi    = {10.5281/zenodo.XXXXXXX},
+  doi: 10.5281/zenodo.22146816
   url    = {https://doi.org/10.5281/zenodo.XXXXXXX}
 }
 ```
