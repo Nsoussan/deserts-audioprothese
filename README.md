@@ -80,6 +80,8 @@ Le pipeline enchaîne trois étapes : `score.py` (scores et chiffres clés), `jo
 }
 ```
 
+Dépôts associés : [Rapport (DOI 10.5281/zenodo.22146893)](https://doi.org/10.5281/zenodo.22146893) · [Jeu de données (DOI 10.5281/zenodo.22146965)](https://doi.org/10.5281/zenodo.22146965)
+
 ## Auteur et licences
 
 Nathan Soussan — audioprothésiste diplômé d'État. Travail mené à titre personnel, sans rattachement institutionnel.
