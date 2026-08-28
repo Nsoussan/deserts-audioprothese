@@ -1,0 +1,4 @@
+Communes analysées                                : 34 965
+Points de données du jeu publié (valeurs remplies) : 345 980
+Communes >= 5000 hab sans audioprothésiste       : 742
+  dont prioritaires (top 15 % du score)           : 331

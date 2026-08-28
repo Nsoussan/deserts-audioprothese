@@ -1,0 +1,19 @@
+LICENCE DES DONNÉES
+===================
+
+Le jeu de données data/processed/communes_scoring.csv est un jeu dérivé,
+construit à partir de sources publiques dont la provenance et les licences
+sont documentées dans data/README.md.
+
+Sous réserve de la vérification, source par source, du droit de redistribution
+(voir data/README.md — cette vérification est un prérequis à toute
+publication), ce jeu dérivé est diffusé sous :
+
+    Licence Ouverte / Open Licence 2.0 (Etalab)
+    https://www.etalab.gouv.fr/licence-ouverte-open-licence/
+
+Vous êtes libre de reproduire, redistribuer, adapter et exploiter ce jeu de
+données, y compris à des fins commerciales, sous réserve de mentionner la
+paternité : « Nathan Soussan — Les déserts de l'audioprothèse en France »,
+la date de dernière mise à jour, et les sources primaires (INSEE, Annuaire
+Santé) telles que listées dans data/README.md.
