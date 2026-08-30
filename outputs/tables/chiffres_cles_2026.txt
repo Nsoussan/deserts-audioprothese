@@ -1,0 +1,16 @@
+CHIFFRES CLÉS v2 — données 2026 (générés le 30/08/2026)
+Communes analysées (France hors Mayotte)      : 34,900
+Communes >= 5000 hab sans audioprothésiste    : 560
+  dont prioritaires (top 15 % des >= 5000)    : 173
+  dont DOM : 44 sans audio, 32 prioritaires
+Activités d'audioprothésistes (RPPS 08/2026)  : 11,018 (+65 % vs 2022)
+Déserts 2022 équipés depuis                   : 295
+Distance médiane au plus proche audio (communes non équipées) : 8.1 km
+Top 3 : Kourou, Saint-Laurent-du-Maroni, Mana (Guyane)
+Millésimes : RPPS août 2026 · Pop. référence 2023 · Âge RP 2022 (65+ exact) ·
+Revenus dossier complet 2023 · Loyers 2024 (complétés 2022) · Réf. france-geojson
+Méthode : 10 critères (80 pts) dont distance au plus proche professionnel (12, plafonnée 30 km) ;
+seuil prioritaire = top 15 % du score parmi les communes de 5 000 hab et plus.
+Mayotte exclue (populations de référence indisponibles, recensement post-Chido fin 2026).
+Validation croisée BPE (millésime 2025, exercice libéral, type D246) :
+  99,1 % des 560 communes sans audio confirmées à zéro · 98,8 % des équipées BPE confirmées par le RPPS

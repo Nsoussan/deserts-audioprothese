@@ -13,18 +13,20 @@ communale : aucune donnée nominative, aucune adresse individuelle.
 | population | Population municipale | INSEE Recensement | 2021 |
 | part_65_plus_pct | Part des 65 ans et plus (%) | INSEE Recensement | 2021 |
 | densite_hab_km2 | Densité de population | INSEE | 2021 |
-| revenu_median_uc | Revenu médian disponible par unité de consommation (€) | INSEE FILOSOFI | 2019 (dernier millésime disponible à la collecte, 2022) |
-| loyer_m2 | Loyer d'annonce au m², parc privé (€) | Carte des loyers (MTE / ANIL), data.gouv.fr | 2022 |
+| revenu_median_uc | Revenu médian disponible par unité de consommation (€) | INSEE FILOSOFI | ~2021 ⚠️ à confirmer |
+| loyer_m2 | Loyer d'annonce au m², parc privé (€) | Observatoire des loyers ⚠️ source exacte à confirmer | ~2022 |
 | nb_audioprothesistes_2022 | Audioprothésistes installés | Annuaire Santé (ADELI, pré-bascule RPPS) | 2022 |
 | hab_par_audio | Habitants par audioprothésiste | dérivé | — |
 | nb_orl_liberaux_2022 | ORL libéraux | Annuaire Santé (ADELI) | 2022 |
 
-## Vérifications de licences (28/08/2026)
+## ⚠️ Vérifications à faire AVANT publication (checklist)
 
-- [x] FILOSOFI : millésime 2019, dernier disponible à la date de collecte (2022) — Licence Ouverte 2.0
-- [x] Loyers : « Carte des loyers » (indicateurs de loyers d'annonce, MTE/ANIL), data.gouv.fr — Licence Ouverte 2.0
-- [x] INSEE (population, densité, âge) et Annuaire Santé : Licence Ouverte 2.0
-- [x] Redistribution d'un jeu dérivé : permise par la Licence Ouverte 2.0 avec mention des sources — LICENSE-DATA cohérente
+- [ ] Confirmer le millésime FILOSOFI exact utilisé lors de la collecte (2019 ? 2021 ?)
+- [ ] Identifier la source exacte des loyers (CLAMEUR ? Observatoires locaux ?) et sa licence
+- [ ] Vérifier pour chaque source le droit de redistribuer un jeu dérivé
+      (INSEE et Annuaire Santé : Licence Ouverte 2.0, redistribution du dérivé permise
+      avec mention de la source — à confirmer pour les loyers)
+- [ ] Consigner ici le résultat de chaque vérification avec la date
 
 ## Note sur les données professionnelles
 

@@ -1,17 +1,18 @@
 cff-version: 1.2.0
 message: "Si vous utilisez ce travail, merci de le citer comme suit."
-title: "Les déserts de l'audioprothèse en France : scoring d'opportunité à la maille communale"
+title: "L'accessibilité de l'audioprothèse en France : mesure communale de l'accès et de l'opportunité d'implantation"
 authors:
   - family-names: "Soussan"
     given-names: "Nathan"
-version: 1.0.0
-date-released: "2026-09-01"
-# doi: 10.5281/zenodo.XXXXXXX   ← décommenter et compléter après la release Zenodo
+version: 2.0.0
+date-released: "2026-08-30"
+doi: 10.5281/zenodo.22146816
 repository-code: "https://github.com/Nsoussan/deserts-audioprothese"
 license: MIT
 keywords:
   - audioprothèse
+  - accessibilité aux soins
+  - accessibilité potentielle localisée
   - déserts médicaux
-  - accès aux soins
+  - 100 % Santé
   - géographie de la santé
-  - scoring territorial

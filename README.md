@@ -1,90 +1,70 @@
-# Les déserts de l'audioprothèse en France
+# L'accessibilité de l'audioprothèse en France
 
-Modèle de scoring géographique identifiant les communes françaises prioritaires pour l'implantation d'un centre d'audioprothèse, à partir de données publiques agrégées à la maille communale.
+Mesure communale de l'accès aux soins audioprothétiques et de l'opportunité d'implantation, sur les 34 900 communes françaises (hors Mayotte), à partir de sources publiques exclusivement — confrontée à la dynamique réelle du marché entre 2022 et 2026.
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22146816.svg)](https://doi.org/10.5281/zenodo.22146816)
+[![DOI code](https://zenodo.org/badge/DOI/10.5281/zenodo.22146816.svg)](https://doi.org/10.5281/zenodo.22146816)
+[![DOI données](https://zenodo.org/badge/DOI/10.5281/zenodo.22146965.svg)](https://doi.org/10.5281/zenodo.22146965)
+[![DOI rapport](https://zenodo.org/badge/DOI/10.5281/zenodo.22146893.svg)](https://doi.org/10.5281/zenodo.22146893)
 
-## Résultats
+## Résultats principaux (version 2.0, données au 30 août 2026)
 
-- **34 965 communes** analysées (Code officiel géographique INSEE, millésime 2021)
-- **742 communes de plus de 5 000 habitants** ne comptent **aucun audioprothésiste** installé
-- dont **331 classées prioritaires** par le modèle (top 15 % du score d'opportunité)
-- Jeu de données publié : **345 980 valeurs** renseignées sur 10 variables par commune
+- **11 018 activités d'audioprothésistes** recensées (RPPS, août 2026), en croissance de **65 %** par rapport aux 6 682 de 2022 ;
+- **560 communes de plus de 5 000 habitants sans audioprothésiste** (4 522 768 habitants), dont **173 classées prioritaires** — une seule ville de plus de 50 000 habitants est concernée dans toute la France : Saint-Laurent-du-Maroni (Guyane), à 146,5 km du professionnel le plus proche ;
+- première **accessibilité potentielle localisée (APL)** calculée pour la profession : moyenne nationale pondérée de 77 professionnels accessibles pour 100 000 habitants de 65 ans et plus, contre 38 dans les DOM et 11 en Guyane ;
+- **validation rétrospective** : le score publié sur données 2022 prédit significativement les implantations 2022-2026 (taux d'équipement de 30,8 % à 54,5 % entre quintiles extrêmes ; AUC 0,597, p < 10⁻⁵) ;
+- **2 992 communes** cumulent accessibilité faible, population âgée et revenus modestes (2,19 millions d'habitants) ;
+- comptages confirmés à **99 %** par croisement avec la Base permanente des équipements (Insee), chaîne administrative indépendante.
 
-![Carte des 331 communes prioritaires](outputs/maps/deserts_prioritaires.png)
+![Carte des 173 communes prioritaires](outputs/maps/carte_prioritaires_2026.png)
 
-Répartition notable : 46 des 331 communes prioritaires sont situées dans les DOM (18 à La Réunion, 14 en Martinique, 9 en Guadeloupe, 5 en Guyane), et la petite couronne parisienne concentre un cluster dense de communes peuplées sans audioprothésiste.
+L'analyse complète — méthodes, 15 figures, 18 tableaux, 11 annexes dont l'inventaire des 560 communes — figure dans le [rapport scientifique de 81 pages](docs/rapport_v2_scientifique.pdf).
 
-## La question
+## Ce que contient ce dépôt
 
-L'accès aux soins auditifs est inégal sur le territoire. La densité d'audioprothésistes varie fortement d'une région à l'autre, et les analyses existantes s'arrêtent le plus souvent à la maille départementale ou régionale — trop grossière pour guider une décision d'implantation ou un diagnostic de zone blanche.
+| Fichier | Rôle |
+|---|---|
+| `data/processed/communes_scoring_2026.csv` | Jeu de données auto-suffisant : 34 900 communes × 17 variables (sources, coordonnées, effectifs 2022 et 2026, distance, score, APL) |
+| `src/collect_2026.py` | Collecte des sources publiques (RPPS, populations 2023, RP 2022, niveau de vie, loyers) |
+| `src/analyses_2026.py` | **Spécification exécutable** : re-dérive score, distances et APL depuis le seul CSV publié et vérifie chaque chiffre clé par assertion |
+| `src/rapport_2026.py` | Générateur du rapport PDF (ReportLab, polices embarquées) |
+| `outputs/tables/` | Liste prioritaire, comparaison 2022-2026, tables du rapport |
+| `docs/` | Rapport v2 (81 p), méthodologie et limites v1 (archive) |
 
-Ce projet part d'une question de terrain, née d'une pratique clinique : **où, précisément, manque-t-il des audioprothésistes — et parmi ces zones, lesquelles présentent les conditions démographiques et économiques d'une implantation viable ?** La réponse suppose de descendre à la commune et de croiser plusieurs dimensions : structure d'âge, revenus, offre de soins existante, prescripteurs.
+Version 1 (données ADELI 2022, 742 communes sans offre dont 331 prioritaires) : voir la [release v1.0.0](../../releases/tag/v1.0.0) et l'annexe K du rapport pour le tableau complet des évolutions méthodologiques.
 
-## Les données
+## Méthode en bref
 
-| Source | Millésime | Ce qu'on en tire | Licence | Lien |
-|---|---|---|---|---|
-| INSEE — Recensement de la population | 2021 (COG 2021) | Population, part des 65 ans et plus, densité | Licence Ouverte 2.0 | [insee.fr](https://www.insee.fr) |
-| INSEE — FILOSOFI | ~2021 (à confirmer) | Revenu médian disponible par UC | Licence Ouverte 2.0 | [insee.fr](https://www.insee.fr) |
-| Annuaire Santé (ADELI, avant bascule RPPS) | 2022 | Nombre d'audioprothésistes et d'ORL libéraux par commune | Licence Ouverte 2.0 | [annuaire.sante.fr](https://annuaire.sante.fr) |
-| Observatoire des loyers (parc privé) | ~2022 (à confirmer) | Loyer d'annonce au m² | Voir data/README.md | — |
+Deux indicateurs complémentaires. L'**APL** (méthode 2SFCA, bandes 0-10/10-20/20-30 km, demande restreinte aux 65 ans et plus) mesure l'accès réel en tenant compte du partage de l'offre entre communes voisines. Le **score d'opportunité** (10 critères pondérés sur 80 points : concurrence 14, distance 12, taux d'équipement 10, part des 65+ 10, sous-équipement 9, revenu 8, potentiel 100 % Santé 7, ORL 5, population 3, loyers 2) hiérarchise les communes non couvertes. Est *prioritaire* toute commune ≥ 5 000 habitants, sans activité, dans le top 15 % du score de sa strate. Sensibilité : ±20 % sur chaque poids → recouvrement médian de la liste de 99,4 %.
 
-Le détail de la provenance, des millésimes et des licences figure dans [`data/README.md`](data/README.md). Le jeu de données publié est **agrégé à la maille communale** : il ne contient aucune donnée nominative ni adresse individuelle.
-
-## La méthode
-
-Chaque commune reçoit un score construit sur **10 critères pondérés** (73 points de pondération au total). Chaque variable est normalisée en score 0–1000 (min-max sur l'ensemble des communes), certaines en sens inverse lorsqu'une valeur faible traduit une opportunité (nombre d'audioprothésistes, densité, taux d'équipement).
-
-| Critère | Poids | Sens |
-|---|---|---|
-| Nombre d'audioprothésistes installés | 14 | inversé |
-| Part des 65 ans et plus | 10 | direct |
-| Taux d'équipement local (audios / population concernée) | 10 | inversé |
-| Habitants par audioprothésiste | 9 | direct |
-| Revenu médian disponible par UC | 8 | direct |
-| Potentiel 100 % Santé (proxy revenus) | 7 | direct |
-| Densité de population | 5 | inversé |
-| ORL libéraux (prescripteurs) | 5 | direct |
-| Population totale | 3 | direct |
-| Loyer au m² | 2 | direct |
-
-La justification de chaque pondération — y compris son caractère en partie normatif — est détaillée dans [`docs/methodologie.md`](docs/methodologie.md). Une commune est dite **prioritaire** si elle compte plus de 5 000 habitants, aucun audioprothésiste, et un score dans le top 15 % national.
-
-## Les limites
-
-Ce modèle a des limites réelles, détaillées dans [`docs/limites.md`](docs/limites.md) : absence de prise en compte des bassins de vie intercommunaux (une commune sans audioprothésiste peut être à dix minutes d'un centre), millésimes hétérogènes des sources, pondérations en partie normatives (testées en sensibilité), et données professionnelles antérieures à la bascule RPPS de 2024.
-
-## Reproduire les résultats
+## Reproduire
 
 ```bash
-git clone https://github.com/Nsoussan/deserts-audioprothese.git
-cd deserts-audioprothese
 pip install -r requirements.txt
-bash run_all.sh
+python src/analyses_2026.py   # re-dérive et vérifie tous les chiffres depuis le CSV publié
 ```
 
-Le pipeline enchaîne trois étapes : `score.py` (scores et chiffres clés), `join_codes.py` (appariement aux codes INSEE via le référentiel embarqué dans `data/geo/`, ~95 % des communes et 100 % des 331 prioritaires), `make_map.py` (carte PNG et SVG). Testé sous Python ≥ 3.10.
+La collecte complète depuis les sources (`src/collect_2026.py`) télécharge ~2 Go et reconstruit la base ; `analyses_2026.py` suffit pour vérifier chaque résultat du rapport.
 
-## Citer ce travail
+## Sources
 
-<!-- À compléter avec le DOI Zenodo après la release v1.0.0 -->
+RPPS — extraction en libre accès (ANS, août 2026) · Populations de référence 2023 (Insee, décret n° 2025-1362) · RP 2022 (Insee) · Dossier complet, niveau de vie 2023 (Insee) · Carte des loyers 2024/2022 (MTE/ANIL) · Contours france-geojson · BPE 2025 (Insee, validation). Toutes sous licence ouverte ; détail et millésimes en section 2 du rapport.
+
+## Citation
 
 ```bibtex
-@misc{soussan2026deserts,
-  author = {Soussan, Nathan},
-  title  = {Les déserts de l'audioprothèse en France : scoring d'opportunité à la maille communale},
-  year   = {2026},
-  doi: 10.5281/zenodo.22146816
-  url    = {[https://doi.org/10.5281/zenodo.XXXXXXX](https://doi.org/10.5281/zenodo.22146816)}
+@techreport{soussan2026audioprothese,
+  author      = {Soussan, Nathan},
+  title       = {L'accessibilit\'e de l'audioproth\`ese en France : mesure communale
+                 de l'acc\`es et de l'opportunit\'e d'implantation, confront\'ee
+                 \`a la dynamique du march\'e 2022-2026},
+  year        = {2026},
+  month       = {8},
+  version     = {2.0},
+  doi         = {10.5281/zenodo.22146893},
+  url         = {https://github.com/Nsoussan/deserts-audioprothese}
 }
 ```
 
-Dépôts associés : [Rapport (DOI 10.5281/zenodo.22146893)](https://doi.org/10.5281/zenodo.22146893) · [Jeu de données (DOI 10.5281/zenodo.22146965)](https://doi.org/10.5281/zenodo.22146965)
+## Licence
 
-## Auteur et licences
-
-Nathan Soussan — audioprothésiste diplômé d'État. Travail mené à titre personnel, sans rattachement institutionnel.
-
-- Code : licence MIT ([`LICENSE`](LICENSE))
-- Données : Licence Ouverte 2.0 / Etalab ([`LICENSE-DATA`](LICENSE-DATA)), sous réserve de la vérification source par source documentée dans `data/README.md`
+Code sous licence MIT · données produites sous Licence Ouverte 2.0 (voir `LICENSE` et `LICENSE-DATA`). L'auteur est audioprothésiste diplômé d'État en exercice ; l'étude n'a bénéficié d'aucun financement.
