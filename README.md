@@ -2,9 +2,9 @@
 
 Mesure communale de l'accès aux soins audioprothétiques et de l'opportunité d'implantation, sur les 34 900 communes françaises (hors Mayotte), à partir de sources publiques exclusivement — confrontée à la dynamique réelle du marché entre 2022 et 2026.
 
-[![DOI code](https://zenodo.org/badge/DOI/10.5281/zenodo.22146816.svg)](https://doi.org/10.5281/zenodo.22146816)
-[![DOI données](https://zenodo.org/badge/DOI/10.5281/zenodo.22146965.svg)](https://doi.org/10.5281/zenodo.22146965)
-[![DOI rapport](https://zenodo.org/badge/DOI/10.5281/zenodo.22146893.svg)](https://doi.org/10.5281/zenodo.22146893)
+[![DOI code](https://zenodo.org/badge/DOI/10.5281/zenodo.22177296.svg)](https://doi.org/10.5281/zenodo.22177296)
+[![DOI données](https://zenodo.org/badge/DOI/10.5281/zenodo.22177338.svg)](https://doi.org/10.5281/zenodo.22177338)
+[![DOI rapport](https://zenodo.org/badge/DOI/10.5281/zenodo.22177322.svg)](https://doi.org/10.5281/zenodo.22177322)
 
 ## Résultats principaux (version 2.0, données au 30 août 2026)
 
@@ -60,7 +60,7 @@ RPPS — extraction en libre accès (ANS, août 2026) · Populations de référe
   year        = {2026},
   month       = {8},
   version     = {2.0},
-  doi         = {10.5281/zenodo.22146893},
+  doi         = {10.5281/zenodo.22177322},
   url         = {https://github.com/Nsoussan/deserts-audioprothese}
 }
 ```
