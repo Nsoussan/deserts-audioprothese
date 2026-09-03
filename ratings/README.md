@@ -1,3 +1,11 @@
+# Ratings without exit: online reputation and the option to switch in a credence goods market
+
+**Working paper** (version 1.0, 3 September 2026): [`paper/Soussan_2026_Ratings_Without_Exit_WP.pdf`](paper/Soussan_2026_Ratings_Without_Exit_WP.pdf) · source [`paper/paper.md`](paper/paper.md). Zenodo DOI: [À COMPLÉTER après dépôt].
+
+The working paper supersedes the descriptive note below, which is kept as the short version. Pipeline: `build_sites.py` (site layer from the RPPS), `collect_places.py` and `requery_mismatches.py` (Google Places API, official), `analyze_ratings.py`, `analyze_extended.py` (alternatives, income, entrants, commune fixed effects), `websites_collect.py`, `websites_code.py`, `analyze_websites.py`. Aggregated results in `outputs/`; site-level Google data are not redistributed.
+
+---
+
 # Online ratings of hearing-aid centres in France and local competition
 
 **A descriptive note** · Nathan Soussan · 3 September 2026 · companion to *L'accessibilité de l'audioprothèse en France* (v2.0, DOI 10.5281/zenodo.22177322)

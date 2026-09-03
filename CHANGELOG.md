@@ -1,5 +1,10 @@
 # Journal des versions
 
+## v2.1.0 — en préparation (3 septembre 2026)
+
+- **Correction** : les 45 arrondissements municipaux de Paris, Lyon et Marseille (3,5 M d'habitants, environ 800 activités) n'avaient pas de centroïde en v2.0 et étaient absents du calcul 2SFCA, comme offre et comme demande. Ils sont géocodés (`data/geo/arrondissements_centroides.csv`, API Découpage administratif) et l'APL est recalculée (`src/apl_v21.py`, sortie `data/processed/communes_scoring_2026_v21.csv`). Classements inchangés (corrélation de rang 0,999 ; 560 communes sans offre et 88 communes à APL nulle identiques) ; APL pondérée Île-de-France 92 → 100, Paris 131, Lyon 134, Marseille 109 ; 413 communes bougent de plus de 5 points, surtout autour d'Aix-en-Provence (`outputs/tables/apl_v20_v21_comparaison.csv`).
+- **Nouveau** : couche établissement (8 481 sites RPPS, dont 8 421 en appareillage médical) et étude des notes Google et du contenu des sites web selon la concurrence locale, dossier `ratings/` et document de travail *Ratings without exit* (`ratings/paper/`).
+
 ## v2.0.0 — 30 août 2026
 
 Refonte complète sur données 2026 ; le rapport (81 p) documente chaque point, l'annexe K en donne le tableau synthétique.

@@ -6,3 +6,6 @@ ratings/test20_places_raw.jsonl
 ratings/test20_places_matches.csv
 ratings/outputs/sites_ratings_sample.csv
 collecte_2026/
+websites_pages.jsonl
+ratings/outputs/sites_ratings_sample_ext.csv
+ratings/outputs/sites_ratings_sample_web.csv

@@ -1,0 +1,42 @@
+sites appariés : 2966 · site web référencé : 2778 · site lu et codé : 2702
+
+Par type (pondéré ; variables de contenu conditionnelles à un site lu) :
+                         n  site_referencé  site_lu  prix_affiche  grille_tarifs  sante100  classe2  essai_gratuit  bilan_gratuit  rdv_en_ligne  devis  garantie_suivi
+type                                                                                                                                                                  
+enseigne nationale  1334.0           0.993    0.989         0.275          0.537     0.850    0.517          0.924          0.931         0.976  0.793           0.943
+mutualiste           173.0           0.965    0.950         0.008          0.008     0.074    0.008          0.936          0.789         0.936  0.786           0.084
+indépendant         1459.0           0.879    0.835         0.053          0.114     0.636    0.248          0.548          0.589         0.793  0.403           0.620
+
+Par bande (pondéré) :
+              n  site_referencé  site_lu  prix_affiche  grille_tarifs  sante100  classe2  essai_gratuit  bilan_gratuit  rdv_en_ligne  devis  garantie_suivi
+bande10                                                                                                                                                    
+0         280.0           0.921    0.896         0.155          0.259     0.757    0.327          0.721          0.737         0.861  0.566           0.705
+1-2       746.0           0.946    0.913         0.157          0.311     0.756    0.341          0.752          0.759         0.875  0.573           0.731
+3-9       502.0           0.950    0.934         0.156          0.317     0.665    0.324          0.780          0.808         0.906  0.650           0.750
+10+      1438.0           0.930    0.905         0.161          0.317     0.710    0.385          0.752          0.759         0.891  0.617           0.746
+
+Indépendants seuls, par bande (leurs sites sont les leurs) :
+             n  site_referencé  site_lu  prix_affiche  grille_tarifs  sante100  classe2  essai_gratuit  bilan_gratuit  rdv_en_ligne  devis  garantie_suivi
+bande10                                                                                                                                                   
+0        166.0           0.873    0.831         0.043          0.080     0.638    0.225          0.572          0.601         0.783  0.391           0.587
+1-2      358.0           0.908    0.844         0.026          0.063     0.623    0.189          0.497          0.550         0.755  0.328           0.566
+3-9      207.0           0.884    0.850         0.045          0.136     0.659    0.233          0.568          0.631         0.778  0.449           0.670
+10+      728.0           0.874    0.830         0.060          0.116     0.631    0.262          0.548          0.581         0.803  0.401           0.614
+
+WLS (indépendants, site lu) : contenu ~ bandes + log pop + revenu + praticiens
+  prix_affiche    n=1220  1-2: -0.014 (p=0.49)  3-9: +0.010 (p=0.69)  10+: +0.034 (p=0.24)  logpop: -0.005 (p=0.52)
+  grille_tarifs   n=1220  1-2: -0.015 (p=0.58)  3-9: +0.061 (p=0.09)  10+: +0.046 (p=0.22)  logpop: -0.005 (p=0.60)
+  sante100        n=1220  1-2: -0.008 (p=0.87)  3-9: +0.035 (p=0.54)  10+: +0.035 (p=0.55)  logpop: -0.021 (p=0.15)
+  essai_gratuit   n=1220  1-2: -0.078 (p=0.13)  3-9: -0.014 (p=0.81)  10+: -0.036 (p=0.54)  logpop: -0.006 (p=0.67)
+  bilan_gratuit   n=1220  1-2: -0.060 (p=0.24)  3-9: +0.006 (p=0.91)  10+: -0.066 (p=0.26)  logpop: +0.007 (p=0.62)
+  rdv_en_ligne    n=1220  1-2: -0.024 (p=0.57)  3-9: +0.003 (p=0.95)  10+: +0.039 (p=0.41)  logpop: -0.008 (p=0.48)
+
+WLS : notes ~ transparence des prix + bandes + type + contrôles (sites lus)
+  log(1+avis)  ~ prix_affiche   : +0.045 (se 0.068, p=0.509) n=2702
+  note         ~ prix_affiche   : -0.042 (se 0.018, p=0.017) n=2572
+  log(1+avis)  ~ grille_tarifs  : -0.123 (se 0.079, p=0.120) n=2702
+  note         ~ grille_tarifs  : -0.052 (se 0.014, p=0.000) n=2572
+  log(1+avis)  ~ sante100       : -0.459 (se 0.085, p=0.000) n=2702
+  note         ~ sante100       : +0.120 (se 0.019, p=0.000) n=2572
+  log(1+avis)  ~ essai_gratuit  : +0.246 (se 0.079, p=0.002) n=2702
+  note         ~ essai_gratuit  : +0.027 (se 0.018, p=0.137) n=2572

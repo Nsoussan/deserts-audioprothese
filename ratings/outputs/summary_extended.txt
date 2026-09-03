@@ -1,0 +1,114 @@
+=== 1. Alternatives réelles à 10 km (enseignes distinctes ; chaque indépendant compte pour une) ===
+                  n  part_avec_avis  avis_median  note_moyenne
+bande_alt10                                                   
+0             280.0           0.875          9.0         4.817
+1-2           749.0           0.927         16.0         4.767
+3-9           559.0           0.936         26.0         4.786
+10+          1378.0           0.948         34.0         4.765
+Sites déplacés de bande par rapport au comptage brut : 63 sur 2966
+WLS log(1+avis) ~ bandes d'alternatives + contrôles
+                   coef     se      p
+const             0.717  0.332  0.031
+bande_alt10_1-2   0.310  0.096  0.001
+bande_alt10_3-9   0.575  0.111  0.000
+bande_alt10_10+   0.708  0.123  0.000
+type_mutualiste   0.006  0.106  0.955
+type_indépendant -0.217  0.060  0.000
+log_pop           0.152  0.032  0.000
+revenu_k          0.017  0.007  0.012
+optique           1.036  0.111  0.000
+
+=== 2. Revenu médian communal (terciles pondérés sur l'échantillon) ===
+bornes des terciles : 23750 € et 26100 €
+                     n  part_avec_avis  avis_median  note_moyenne  part_indep  part_site_web
+tercile_revenu                                                                              
+T1 (bas)        1072.0           0.927         26.0         4.753       0.472          0.920
+T2              1012.0           0.942         29.0         4.766       0.468          0.929
+T3 (haut)        882.0           0.953         28.0         4.796       0.516          0.958
+                            n  part_avec_avis  avis_median  note_moyenne
+bande10 tercile_revenu                                                  
+0       T1 (bas)        132.0           0.871          8.0         4.850
+        T2              114.0           0.868         10.0         4.764
+        T3 (haut)        34.0           0.912          9.0         4.865
+1-2     T1 (bas)        322.0           0.901         15.0         4.717
+        T2              260.0           0.958         17.0         4.791
+        T3 (haut)       164.0           0.927         15.0         4.807
+3-9     T1 (bas)        228.0           0.912         23.0         4.776
+        T2              163.0           0.957         30.0         4.788
+        T3 (haut)       111.0           0.946         26.0         4.801
+10+     T1 (bas)        390.0           0.946         36.0         4.739
+        T2              475.0           0.939         34.0         4.754
+        T3 (haut)       573.0           0.956         31.0         4.793
+WLS log(1+avis) ~ bandes + type + terciles de revenu + log pop + optique · n=2966
+                           coef     se      p
+const                     1.064  0.287  0.000
+bande10_1-2               0.308  0.096  0.001
+bande10_3-9               0.551  0.114  0.000
+bande10_10+               0.693  0.127  0.000
+type_mutualiste          -0.001  0.106  0.996
+type_indépendant         -0.217  0.060  0.000
+tercile_revenu_T2         0.013  0.071  0.859
+tercile_revenu_T3 (haut)  0.140  0.079  0.076
+log_pop                   0.157  0.034  0.000
+optique                   1.035  0.112  0.000
+
+WLS a au moins un avis ~ bandes + type + terciles de revenu + log pop + optique · n=2966
+                           coef     se      p
+const                     0.904  0.044  0.000
+bande10_1-2               0.043  0.022  0.049
+bande10_3-9               0.050  0.024  0.036
+bande10_10+               0.063  0.024  0.007
+type_mutualiste          -0.012  0.016  0.448
+type_indépendant         -0.065  0.010  0.000
+tercile_revenu_T2         0.012  0.012  0.286
+tercile_revenu_T3 (haut)  0.022  0.012  0.066
+log_pop                   0.000  0.005  0.943
+optique                  -0.019  0.013  0.146
+
+WLS note (si >=1 avis) ~ bandes + type + terciles de revenu + log pop + optique · n=2768
+                           coef     se      p
+const                     4.847  0.073  0.000
+bande10_1-2              -0.043  0.033  0.192
+bande10_3-9              -0.001  0.031  0.964
+bande10_10+              -0.028  0.035  0.427
+type_mutualiste           0.015  0.034  0.650
+type_indépendant          0.062  0.016  0.000
+tercile_revenu_T2         0.016  0.020  0.433
+tercile_revenu_T3 (haut)  0.037  0.021  0.076
+log_pop                  -0.009  0.008  0.236
+optique                  -0.062  0.022  0.005
+
+=== 3. Entrants : sites situés dans une commune sans audioprothésiste en 2022 ===
+                                         n  part_avec_avis  avis_median  avis_q75  note_moyenne  part_site_web
+entrant_commune type                                                                                          
+False           enseigne nationale  1112.0           0.967         33.0      84.0         4.726          0.995
+                mutualiste           154.0           0.955         27.0      58.0         4.750          0.960
+                indépendant         1050.0           0.910         24.0      61.0         4.815          0.882
+True            enseigne nationale   142.0           0.966         22.0      82.0         4.799          0.957
+                mutualiste            13.0           1.000         27.0      61.0         4.925          1.000
+                indépendant          290.0           0.912         13.0      46.0         4.842          0.906
+WLS log(1+avis) ~ entrant + bandes + type + contrôles · n=2761
+                   coef     se      p
+entrant          -0.091  0.102  0.372
+type_indépendant -0.185  0.063  0.004
+log_pop           0.149  0.035  0.000
+
+WLS a au moins un avis ~ entrant + bandes + type + contrôles · n=2761
+                   coef     se      p
+entrant           0.011  0.015  0.487
+type_indépendant -0.063  0.010  0.000
+log_pop           0.002  0.005  0.671
+
+WLS note (si >=1 avis) ~ entrant + bandes + type + contrôles · n=2576
+                   coef     se      p
+entrant           0.045  0.033  0.175
+type_indépendant  0.067  0.015  0.000
+log_pop          -0.003  0.007  0.717
+
+=== 4. Effets fixes commune (communes de l'échantillon avec au moins 2 sites appariés de types différents) ===
+communes : 406 · sites : 1240
+FE commune · log(1+avis) · n=1240 : indépendant = -0.198 (se 0.112, p=0.077) ; optique = 1.041 (p=0.000) ; praticiens = 0.171 (p=0.026)
+FE commune · a au moins un avis · n=1240 : indépendant = -0.040 (se 0.018, p=0.022) ; optique = 0.004 (p=0.907) ; praticiens = 0.017 (p=0.213)
+FE commune · note (si >=1 avis) · n=1164 : indépendant = 0.066 (se 0.032, p=0.038) ; optique = -0.046 (p=0.417) ; praticiens = -0.061 (p=0.077)
+FE commune · a un site web · n=1240 : indépendant = -0.112 (se 0.019, p=0.000) ; optique = 0.034 (p=0.176) ; praticiens = 0.015 (p=0.354)
+
