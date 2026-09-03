@@ -8,4 +8,16 @@ ratings/outputs/sites_ratings_sample.csv
 collecte_2026/
 websites_pages.jsonl
 ratings/outputs/sites_ratings_sample_ext.csv
+ratings/sites_audio_2026.csv
+ratings/sites_v2.csv
+ratings/sites_retail_alternatives.csv
+ratings/sample_3000.csv
+ratings/outputs/v2/sample_analysis_v2.csv
+ratings/outputs/v2/benchmark_coiffeurs.csv
 ratings/outputs/sites_ratings_sample_web.csv
+ratings/benchmark_raw.jsonl
+
+# Fichiers avec noms, adresses ou domaines de sites (RGPD, minimisation)
+ratings/outputs/websites_coded.csv
+ratings/figures_v2.log
+src/__pycache__/

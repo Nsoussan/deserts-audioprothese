@@ -35,7 +35,7 @@ def code_text(t):
     montants = []
     for m in P["prix_montant"].finditer(t):
         v = int(m.group(1).replace(" ","").replace(".",""))
-        if not (100 <= v <= 20000) or v in (240, 400, 840, 1400): continue  # montants réglementaires de remboursement
+        if not (100 <= v <= 20000) or v in (240, 400, 840, 1400, 1700): continue  # montants réglementaires de remboursement
         ctx = t[max(0,m.start()-90):m.end()+60]
         if CTX.search(ctx) and not EXCL.search(ctx) and not FIRST.search(t[max(0,m.start()-160):m.end()+40]):
             montants.append(v)
@@ -57,7 +57,7 @@ for line in open("websites_pages.jsonl", encoding="utf-8"):
             dom_pages[r["domain"]]["ok"] = True; dom_pages[r["domain"]]["text"] += " " + r.get("text","")
             if r["kind"]=="key":
                 dom_pages[r["domain"]]["n_key"] += 1
-                if re.search(r"tarif|prix", r["url"], re.I): dom_pages[r["domain"]]["tarifs_page"] = 1
+                if re.search(r"tarif|prix", r["url"], re.I) and re.search(r"auditi|audio|appareil|proth", r.get("text",""), re.I) and not re.search(r"lunette|optique|solaire", r["url"], re.I): dom_pages[r["domain"]]["tarifs_page"] = 1
 rows = []
 for sid, (ok, text, dom) in site_pages.items():
     dp = dom_pages.get(dom, {"ok": False, "text": "", "n_key": 0, "tarifs_page": 0})

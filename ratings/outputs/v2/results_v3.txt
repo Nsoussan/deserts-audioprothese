@@ -1,0 +1,120 @@
+=== Identifiants Places ===
+appariements : 2966 ; place_id distincts : 2880 ; sites partageant un place_id : 171
+formes des doublons : {'unbranded independent': 96, 'integrated chain': 32, 'brand network': 21, 'mutualist network': 13, 'optician-hosted': 9}
+listings fermés (CLOSED_*) conservés dans l'analyse : 31
+non appariés par bande : {'10+': 12, '0': 11, '1-2': 8, '3-9': 2} sur {'10+': 1450, '1-2': 754, '3-9': 504, '0': 291}
+
+=== B1. Dispersion : quart supérieur par bande, tests groupés ===
+[tous] n par bande {'0': 62, '1-2': 174, '3-9': 118, '10+': 341} ; SD {'0': 0.15, '1-2': 0.139, '3-9': 0.248, '10+': 0.298} ; diff SD (≥3 − ≤2) = 0.145, IC95 bootstrap communes [0.095; 0.200]
+         n_low45      n    p45    p46    p47   d10
+bande10                                           
+0            2.0   62.0  0.032  0.032  0.081  4.71
+1-2          3.0  174.0  0.017  0.034  0.069  4.70
+3-9         16.0  118.0  0.136  0.203  0.288  4.37
+10+         40.0  341.0  0.117  0.161  0.229  4.40
+LPM < 4,5 ~ bandes + forme + propriétaire + log avis (grappes communes) :
+                              coef     se      p
+bande10_1-2                 -0.043  0.028  0.125
+bande10_3-9                 -0.019  0.043  0.657
+bande10_10+                 -0.047  0.042  0.270
+type5_optician-hosted        0.125  0.039  0.001
+type5_unbranded independent  0.065  0.023  0.005
+owner                       -0.018  0.029  0.539
+log_reviews                  0.070  0.030  0.022
+LPM < 4,5 : ≥3 vs ≤2 = -0.005 (se 0.027, p=0.851)
+Levene groupé (|écart à la médiane de bande| ~ bandes + forme) :
+              coef     se      p
+bande10_1-2 -0.014  0.019  0.474
+bande10_3-9  0.026  0.024  0.276
+bande10_10+  0.047  0.022  0.031
+  test 4 bandes (Wald groupé) p = 0.000928
+  tendance linéaire : +0.0226 (p=0.00617)
+[sans opticiens] n par bande {'0': 62, '1-2': 152, '3-9': 60, '10+': 224} ; SD {'0': 0.15, '1-2': 0.133, '3-9': 0.211, '10+': 0.297} ; diff SD (≥3 − ≤2) = 0.144, IC95 bootstrap communes [0.064; 0.218]
+         n_low45      n    p45    p46    p47   d10
+bande10                                           
+0            2.0   62.0  0.032  0.032  0.081  4.71
+1-2          3.0  152.0  0.020  0.020  0.053  4.70
+3-9          5.0   60.0  0.083  0.100  0.100  4.68
+10+         16.0  224.0  0.071  0.094  0.134  4.60
+LPM < 4,5 ~ bandes + forme + propriétaire + log avis (grappes communes) :
+                              coef     se      p
+bande10_1-2                 -0.036  0.029  0.217
+bande10_3-9                 -0.056  0.045  0.211
+bande10_10+                 -0.109  0.043  0.011
+type5_optician-hosted        0.000  0.000  0.077
+type5_unbranded independent  0.046  0.023  0.045
+owner                        0.000  0.028  0.999
+log_reviews                  0.118  0.030  0.000
+LPM < 4,5 : ≥3 vs ≤2 = -0.067 (se 0.028, p=0.0152)
+Levene groupé (|écart à la médiane de bande| ~ bandes + forme) :
+              coef     se      p
+bande10_1-2 -0.003  0.019  0.861
+bande10_3-9  0.006  0.029  0.830
+bande10_10+  0.040  0.023  0.078
+  test 4 bandes (Wald groupé) p = 0.0943
+  tendance linéaire : +0.0190 (p=0.0277)
+
+Fenêtre fixe 30–90 avis (toutes formes / sans opticiens) :
+[tous] IC95 diff SD (≥3 − ≤2) [0.049; 0.165]
+             n     sd   mean    p45  n_low45
+bande10                                     
+0         47.0  0.159  4.864  0.043      2.0
+1-2      171.0  0.129  4.873  0.006      1.0
+3-9      139.0  0.226  4.815  0.072     10.0
+10+      436.0  0.246  4.814  0.055     24.0
+[sans opticiens] IC95 diff SD (≥3 − ≤2) [0.039; 0.144]
+             n     sd   mean    p45  n_low45
+bande10                                     
+0         47.0  0.159  4.864  0.043      2.0
+1-2      159.0  0.124  4.877  0.006      1.0
+3-9      129.0  0.223  4.814  0.070      9.0
+10+      425.0  0.224  4.820  0.049     21.0
+
+Note pondérée par le nombre d'avis, sans opticiens : {'0': 4.867, '1-2': 4.841, '3-9': 4.642, '10+': 4.583}
+
+=== B3. Propriétaire × bande, propriétaire × forme (log(1+avis)) ===
+                      coef     se      p
+owner               -0.438  0.165  0.008
+bande10_1-2_x_owner  0.136  0.188  0.468
+bande10_3-9_x_owner -0.096  0.203  0.636
+bande10_10+_x_owner  0.112  0.181  0.535
+  Wald interactions = 0 : p = 0.427
+                                      coef     se      p
+owner                               -0.083  0.163  0.608
+type5_brand network_x_owner         -0.157  0.225  0.484
+type5_optician-hosted_x_owner       -0.979  0.276  0.000
+type5_unbranded independent_x_owner -0.167  0.193  0.385
+  Wald interactions = 0 : p = 0.003
+effet propriétaire par forme (owner + interaction) : brand network: -0.24, optician-hosted: -1.06, unbranded independent: -0.25, integrated chain: -0.08
+interactions bande × indépendant :                     coef     se      p
+bande10_1-2_x_ind -0.216  0.191  0.258
+bande10_3-9_x_ind -0.231  0.208  0.266
+bande10_10+_x_ind  0.000  0.180  0.998
+
+=== I3. Empilement centres + coiffeurs (879 communes), effets fixes commune ===
+communes : 558 ; centres 314 ; salons 648
+LPM < 4,5 ~ credence × competitive + FE commune (quart supérieur par bien × bande) :
+                       coef     se      p
+credence             -0.058  0.047  0.212
+credence:competitive  0.084  0.094  0.368
+par bande :
+                             coef     se      p
+credence                    0.000  0.043  1.000
+credence:C(bande10)[T.1-2] -0.103  0.086  0.233
+credence:C(bande10)[T.10+]  0.030  0.125  0.808
+credence:C(bande10)[T.3-9]  0.022  0.121  0.856
+Levene empilé (|écart| ~ credence × competitive + FE commune) :
+                       coef     se      p
+credence             -0.047  0.028  0.089
+competitive           0.026  0.022  0.246
+credence:competitive  0.061  0.049  0.214
+
+gradient centres sur les 879 communes du benchmark (mêmes contrôles que coiffeurs) :
+              coef     se      p
+const        0.352  0.587  0.549
+bande10_1-2  0.341  0.114  0.003
+bande10_3-9  0.743  0.134  0.000
+bande10_10+  0.683  0.182  0.000
+log_pop      0.213  0.052  0.000
+revenu_k     0.008  0.014  0.575
+salons notés par bande : {'0': 802, '1-2': 587, '10+': 595, '3-9': 583}
