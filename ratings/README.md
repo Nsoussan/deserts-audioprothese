@@ -1,8 +1,8 @@
 # Ratings Without Exit: Online Reputation and the Option to Switch in a Credence Goods Market
 
-**Working paper, version 2.1, 3 September 2026** · Nathan Soussan · companion to *L'accessibilité de l'audioprothèse en France* (v2.0, report doi:10.5281/zenodo.22177322, data doi:10.5281/zenodo.22177338, code doi:10.5281/zenodo.22177296).
+**Working paper, version 2.1, 3 September 2026, doi:10.5281/zenodo.22286008** · Nathan Soussan · companion to *L'accessibilité de l'audioprothèse en France* (v2.0, report doi:10.5281/zenodo.22177322, data doi:10.5281/zenodo.22177338, code doi:10.5281/zenodo.22177296).
 
-- Paper: [`paper/Soussan_2026_Ratings_Without_Exit_WP_v2.pdf`](paper/Soussan_2026_Ratings_Without_Exit_WP_v2.pdf) (source `paper/paper_v2.md`, built with pandoc and xelatex).
+- Paper: [`paper/Soussan_2026_Ratings_Without_Exit_WP_v2.pdf`](paper/Soussan_2026_Ratings_Without_Exit_WP_v2.pdf), archived at [doi:10.5281/zenodo.22286008](https://doi.org/10.5281/zenodo.22286008) (source `paper/paper_v2.md`, built with pandoc and xelatex).
 - Earlier versions: `paper/Soussan_2026_Ratings_Without_Exit_WP.pdf` (v1.0, 3 September 2026, superseded).
 - Data protection note: [`DATA-PROTECTION.md`](DATA-PROTECTION.md).
 

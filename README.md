@@ -5,6 +5,7 @@ Mesure communale de l'accès aux soins audioprothétiques et de l'opportunité d
 [![DOI code](https://zenodo.org/badge/DOI/10.5281/zenodo.22177296.svg)](https://doi.org/10.5281/zenodo.22177296)
 [![DOI données](https://zenodo.org/badge/DOI/10.5281/zenodo.22177338.svg)](https://doi.org/10.5281/zenodo.22177338)
 [![DOI rapport](https://zenodo.org/badge/DOI/10.5281/zenodo.22177322.svg)](https://doi.org/10.5281/zenodo.22177322)
+[![DOI working paper](https://zenodo.org/badge/DOI/10.5281/zenodo.22286008.svg)](https://doi.org/10.5281/zenodo.22286008)
 
 ## Résultats principaux (version 2.0, données au 30 août 2026)
 
@@ -29,6 +30,7 @@ L'analyse complète — méthodes, 15 figures, 18 tableaux, 11 annexes dont l'in
 | `src/rapport_2026.py` | Générateur du rapport PDF (ReportLab, polices embarquées) |
 | `outputs/tables/` | Liste prioritaire, comparaison 2022-2026, tables du rapport |
 | `docs/` | Rapport v2 (81 p), méthodologie et limites v1 (archive) |
+| `ratings/` | Étude complémentaire *Ratings Without Exit* (document de travail v2.1, 27 p, en anglais, [doi:10.5281/zenodo.22286008](https://doi.org/10.5281/zenodo.22286008)) : notes Google des 8 421 centres et concurrence locale, sites web, benchmark coiffeurs ; couche établissement publique `sites_public_v2.csv`, voir `ratings/README.md` |
 
 Version 1 (données ADELI 2022, 742 communes sans offre dont 331 prioritaires) : voir la [release v1.0.0](../../releases/tag/v1.0.0) et l'annexe K du rapport pour le tableau complet des évolutions méthodologiques.
 

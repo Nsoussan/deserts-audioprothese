@@ -21,3 +21,4 @@ ratings/benchmark_raw.jsonl
 ratings/outputs/websites_coded.csv
 ratings/figures_v2.log
 src/__pycache__/
+Claude outputs/
