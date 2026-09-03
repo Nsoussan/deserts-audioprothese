@@ -1,0 +1,114 @@
+Sites collectés : 2999 · trouvés sur Google : 2997 · appariements valides : 2966
+Parmi les appariés : avec au moins un avis : 2768 (93.3%)
+
+Par bande de concurrence (10 km), pondéré :
+              n  n_apparies  part_trouves_google  part_appariement_valide  part_avec_avis  avis_median  avis_moyen  note_moyenne  note_ecart_type  part_note_5  part_site_web
+bande10                                                                                                                                                                      
+0         291.0       280.0                0.997                    0.962           0.875          9.0      20.557         4.817            0.409        0.506          0.921
+1-2       754.0       746.0                1.000                    0.989           0.926         16.0      33.914         4.764            0.510        0.401          0.946
+3-9       504.0       502.0                1.000                    0.996           0.934         25.0      69.090         4.786            0.265        0.322          0.950
+10+      1450.0      1438.0                0.999                    0.992           0.948         34.0      97.361         4.766            0.375        0.349          0.930
+
+Par type, pondéré :
+                         n  n_apparies  part_trouves_google  part_appariement_valide  part_avec_avis  avis_median  avis_moyen  note_moyenne  note_ecart_type  part_note_5  part_site_web
+type                                                                                                                                                                                    
+enseigne nationale  1344.0      1334.0                1.000                    0.992           0.970         33.0      86.422         4.732            0.312        0.231          0.993
+mutualiste           173.0       173.0                1.000                    1.000           0.961         27.0      44.433         4.765            0.400        0.292          0.965
+indépendant         1482.0      1459.0                0.999                    0.990           0.911         23.0      84.065         4.812            0.410        0.480          0.879
+
+Bande x type, pondéré :
+                                n  n_apparies  part_trouves_google  part_appariement_valide  part_avec_avis  avis_median  avis_moyen  note_moyenne  note_ecart_type  part_note_5  part_site_web
+bande10 type                                                                                                                                                                                   
+0       enseigne nationale  105.0       105.0                1.000                    1.000           0.905         11.0      19.114         4.818            0.293        0.389          1.000
+        mutualiste            9.0         9.0                1.000                    1.000           1.000         25.0      36.778         4.822            0.147        0.222          0.889
+        indépendant         177.0       166.0                0.994                    0.938           0.849          8.0      20.590         4.816            0.482        0.603          0.873
+1-2     enseigne nationale  348.0       346.0                1.000                    0.994           0.968         20.0      43.234         4.764            0.409        0.322          0.986
+        mutualiste           42.0        42.0                1.000                    1.000           0.881         14.0      24.952         4.657            0.694        0.351          0.952
+        indépendant         364.0       358.0                1.000                    0.984           0.891         11.0      25.958         4.776            0.574        0.489          0.908
+3-9     enseigne nationale  250.0       250.0                1.000                    1.000           0.984         31.0      73.424         4.742            0.260        0.220          0.996
+        mutualiste           45.0        45.0                1.000                    1.000           0.956         26.0      42.711         4.821            0.169        0.279          1.000
+        indépendant         209.0       207.0                1.000                    0.990           0.870         18.0      69.633         4.837            0.280        0.472          0.884
+10+     enseigne nationale  641.0       633.0                1.000                    0.988           0.967         39.0     100.768         4.721            0.315        0.216          0.992
+        mutualiste           77.0        77.0                1.000                    1.000           0.974         31.0      48.494         4.745            0.441        0.293          0.948
+        indépendant         732.0       728.0                0.999                    0.995           0.929         29.0      99.574         4.809            0.409        0.475          0.874
+
+Kruskal-Wallis note ~ bande : H=28.71, p=2.57e-06
+Kruskal-Wallis nb avis ~ bande : H=236.76, p=4.78e-51
+Spearman APL ~ nb avis : rho=0.144, p=1.51e-14
+Spearman APL ~ note : rho=0.033, p=0.0912
+Spearman concurrents 10 km ~ nb avis : rho=0.279, p=3.55e-54
+
+=== WLS log(1+nb avis) (poids de sondage, HC1) · n=2814 · R2=0.118
+                   coef     se      p
+const             0.594  0.340  0.080
+bande10_1-2       0.318  0.097  0.001
+bande10_3-9       0.566  0.114  0.000
+bande10_10+       0.678  0.125  0.000
+type_mutualiste   0.010  0.107  0.922
+type_indépendant -0.187  0.062  0.003
+log_pop           0.162  0.033  0.000
+revenu_k          0.018  0.007  0.008
+optique           1.092  0.115  0.000
+
+=== WLS note (si >=1 avis) (poids de sondage, HC1) · n=2625 · R2=0.020
+                   coef     se      p
+const             4.761  0.083  0.000
+bande10_1-2      -0.046  0.033  0.162
+bande10_3-9      -0.005  0.031  0.858
+bande10_10+      -0.032  0.034  0.348
+type_mutualiste   0.013  0.034  0.702
+type_indépendant  0.069  0.016  0.000
+log_pop          -0.006  0.007  0.367
+revenu_k          0.003  0.002  0.106
+optique          -0.059  0.022  0.007
+
+=== WLS a un site web (poids de sondage, HC1) · n=2814 · R2=0.051
+                   coef     se      p
+const             0.921  0.053  0.000
+bande10_1-2       0.012  0.018  0.490
+bande10_3-9       0.011  0.020  0.570
+bande10_10+       0.003  0.020  0.894
+type_mutualiste  -0.024  0.016  0.127
+type_indépendant -0.104  0.010  0.000
+log_pop          -0.003  0.004  0.489
+revenu_k          0.004  0.001  0.005
+optique           0.002  0.007  0.810
+
+=== WLS a au moins un avis (poids de sondage, HC1) · n=2814 · R2=0.023
+                   coef     se      p
+const             0.822  0.051  0.000
+bande10_1-2       0.046  0.022  0.038
+bande10_3-9       0.052  0.024  0.029
+bande10_10+       0.061  0.023  0.010
+type_mutualiste  -0.009  0.016  0.574
+type_indépendant -0.063  0.010  0.000
+log_pop           0.001  0.005  0.815
+revenu_k          0.003  0.001  0.000
+optique          -0.017  0.014  0.215
+
+=== WLS note = 5,0 (si >=1 avis) ~ bande + type + log(avis) + log(pop) + optique · n=2768 · R2=0.180
+                   coef     se      p
+const             0.865  0.077  0.000
+bande10_1-2      -0.027  0.034  0.427
+bande10_3-9      -0.020  0.037  0.590
+bande10_10+       0.048  0.037  0.198
+type_mutualiste   0.060  0.040  0.139
+type_indépendant  0.236  0.021  0.000
+log_reviews      -0.113  0.006  0.000
+log_pop          -0.029  0.009  0.001
+optique           0.116  0.026  0.000
+
+Distribution des notes selon le seuil d'avis :
+    seuil_avis bande10     n  part_5.0  note_moyenne  sd_notes  part_inf_4.5
+0            1       0   245     0.506         4.817     0.409         0.098
+1            1     1-2   691     0.401         4.764     0.510         0.101
+2            1     3-9   469     0.322         4.786     0.265         0.100
+3            1     10+  1363     0.349         4.766     0.375         0.110
+4           10       0   140     0.336         4.827     0.215         0.086
+5           10     1-2   470     0.283         4.815     0.223         0.070
+6           10     3-9   379     0.248         4.771     0.253         0.098
+7           10     10+  1139     0.288         4.773     0.291         0.100
+8           30       0    57     0.333         4.875     0.149         0.035
+9           30     1-2   226     0.265         4.868     0.135         0.013
+10          30     3-9   232     0.216         4.770     0.238         0.103
+11          30     10+   767     0.250         4.784     0.273         0.083

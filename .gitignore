@@ -1,0 +1,8 @@
+
+# Données Google Places (non redistribuables, conditions Google Maps Platform)
+ratings/places_raw.jsonl
+ratings/places_matches.csv
+ratings/test20_places_raw.jsonl
+ratings/test20_places_matches.csv
+ratings/outputs/sites_ratings_sample.csv
+collecte_2026/
