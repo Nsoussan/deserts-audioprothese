@@ -6,7 +6,8 @@ ratings/test20_places_raw.jsonl
 ratings/test20_places_matches.csv
 ratings/outputs/sites_ratings_sample.csv
 collecte_2026/
-websites_pages.jsonl
+ratings/websites_pages.jsonl
+ratings/rpps_audio_lignes.csv
 ratings/outputs/sites_ratings_sample_ext.csv
 ratings/sites_audio_2026.csv
 ratings/sites_v2.csv
@@ -21,4 +22,5 @@ ratings/benchmark_raw.jsonl
 ratings/outputs/websites_coded.csv
 ratings/figures_v2.log
 src/__pycache__/
-Claude outputs/
+ratings/__pycache__/
+ratings/figures_v22.log
