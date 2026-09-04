@@ -9,12 +9,13 @@ d = d[d["Code commune (coord. structure)"].isin(set(c["code_insee"]))]
 up = lambda s: s.str.upper().str.strip()
 d["ens"] = up(d["Enseigne commerciale site"]); d["rs"] = up(d["Raison sociale site"])
 
-# Classification par mots-clés sur enseigne puis raison sociale (heuristique, à valider)
+# Classification par mots-clés sur enseigne et raison sociale (heuristique). v2.3 : Krys avant Entendre ; « Entendre » exclut Mieux/Bien/S'/D'Entendre et Entendre et Comprendre ; Harmonie restreint à Harmonie Mutuelle.
 RULES = [
  ("Audika", r"AUDIKA|SOGECA"), ("Amplifon", r"AMPLIFON"), ("Audition Santé (Sonova)", r"SONOVA|AUDITION ?SANTE"),
  ("Optical Center", r"OPTICAL CENTER"), ("Audilab", r"AUDILAB"), ("Audition Conseil", r"AUDITION CONSEIL"),
- ("Alain Afflelou Acousticien", r"AFFLELOU"), ("Entendre", r"\bENTENDRE\b"), ("Krys Audition", r"\bKRYS\b"),
- ("Sonance Audition", r"SONANCE"), ("Audio 2000", r"AUDIO ?2000"), ("Écouter Voir / mutualiste", r"ECOUTER VOIR|MUTUALIST|MUTUALITE|VYV ?3|\bOXANCE\b|UNION DE GESTION|\bSSAM\b|HARMONIE"),
+ ("Alain Afflelou Acousticien", r"AFFLELOU"), ("Krys Audition", r"\bKRYS\b"),
+ ("Entendre", r"(?<!MIEUX )(?<!BIEN )(?<!S')(?<!D')\bENTENDRE\b(?! ET COMPRENDRE)"),
+ ("Sonance Audition", r"SONANCE"), ("Audio 2000", r"AUDIO ?2000"), ("Écouter Voir / mutualiste", r"ECOUTER VOIR|MUTUALIST|MUTUALITE|VYV ?3|\bOXANCE\b|UNION DE GESTION|\bSSAM\b|HARMONIE MUTUELLE"),
  ("Acuitis", r"ACUITIS"), ("GrandAudition", r"GRAND ?AUDITION"), ("VivaSon", r"VIVASON"), ("Idéal Audition", r"IDEAL AUDITION"),
  ("Atol", r"\bATOL\b"), ("Optic 2000", r"OPTIC ?2000"), ("Solusons", r"SOLUSONS"), ("Audio pour tous", r"AUDIO POUR TOUS"),
  ("Manéo Audition", r"MANEO"), ("Benoit Audition", r"BENOIT AUDITION|AUDITION BENOIT|LABORATOIRE D'AUDITION BENOIT"),

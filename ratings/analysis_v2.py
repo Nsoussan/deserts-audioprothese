@@ -9,15 +9,22 @@ OUT = open("outputs/v2/results.txt","w")
 def W(x=""): OUT.write(str(x)+"\n")
 
 # ---------- données ----------
-d = pd.read_csv("outputs/sites_ratings_sample_web.csv", dtype={"code_insee":str,"site_id":str})
+# v2.3 : lecture directe des fichiers de chaque étape (appariements Google aplatis, sites web codés, alternatives), sans passer par les scripts v1.0
+d = pd.read_csv("outputs/sites_ratings_sample.csv", dtype={"code_insee":str,"site_id":str})
+_w = pd.read_csv("outputs/websites_coded.csv", dtype={"site_id":str}); _WV = ["prix_affiche","grille_tarifs","sante100","classe2","essai_gratuit","bilan_gratuit","rdv_en_ligne","devis","garantie_suivi"]
+d = d.merge(_w[["site_id","domain","web_ok","domain_ok","n_pages_domaine"]+_WV], on="site_id", how="left")
+d["site_lu"] = np.where(d["has_website"].astype(float)==1, d["web_ok"].fillna(0), 0.0)
+for _v in _WV: d[_v] = np.where(d["site_lu"]==1, d[_v], np.nan)
+_a = pd.read_csv("sites_retail_alternatives.csv", dtype={"site_id":str})[["site_id","alternatives_10km","alternatives_20km","memes_enseigne_10km","bande_alt10","nb_audio_2022_commune","entrant_commune"]]
+d = d.drop(columns=[c for c in _a.columns if c!="site_id" and c in d.columns]).merge(_a, on="site_id", how="left")
 smp_all = pd.read_csv("sample_3000.csv", dtype={"code_insee":str,"site_id":str})
 missing = smp_all[~smp_all["site_id"].isin(d["site_id"])].copy()
 for c in d.columns:
     if c not in missing.columns: missing[c] = np.nan
 missing["match_ok"] = False; missing["has_rating"] = 0.0; missing["has_website"] = 0.0; missing["user_rating_count"] = 0.0; missing["site_lu"] = 0.0
 d = pd.concat([d, missing[d.columns]], ignore_index=True)
-v2 = pd.read_csv("sites_v2.csv", dtype={"code_insee":str,"site_id":str})[["site_id","type5","brand","owner_on_site","pop_10km","pop65_10km","demand65_per_site","apl_v21","dist_concurrent_km","n_titulaires","n_salaries"]]
-d = d.drop(columns=[c for c in ["dist_concurrent_km","n_titulaires","n_salaries"] if c in d.columns]).merge(v2, on="site_id", how="left")
+v2 = pd.read_csv("sites_v2.csv", dtype={"code_insee":str,"site_id":str})[["site_id","type5","brand","owner_on_site","pop_10km","pop65_10km","demand65_per_site","apl_v21","dist_concurrent_km","n_titulaires","n_salaries","population_2023","part_65_plus_pct","revenu_median_uc"]]
+d = d.drop(columns=[c for c in ["dist_concurrent_km","n_titulaires","n_salaries","population_2023","part_65_plus_pct","revenu_median_uc"] if c in d.columns]).merge(v2, on="site_id", how="left")   # variables communales avec les valeurs d'arrondissement
 d["matched"] = d["match_ok"].fillna(False).astype(bool)
 d["log_pop"] = np.nan
 d["bande10"] = pd.Categorical(d["bande10"].astype(str), ["0","1-2","3-9","10+"], ordered=True)
@@ -98,7 +105,7 @@ X = X_base(ok, ("log_dem65","share65")); X = X.drop(columns=[c for c in X.column
 r = wls(ok["log_reviews1"], X, ok["poids"], ok["code_insee"]); W("\n[continu] log(1+avis) ~ log(1+concurrents 10 km) + log(1+distance au plus proche) + contrôles B"); W(tab(r, KEEP).to_string())
 # Alternatives distinctes (spec B)
 Xa = X_base(ok, ("log_dem65","share65")).drop(columns=["bande10_1-2","bande10_3-9","bande10_10+"])
-Xa = pd.concat([Xa, pd.get_dummies(pd.Categorical(ok["bande_alt10"].astype(str), ["0","1-2","3-9","10+"]), prefix="alt", drop_first=True).astype(float)], axis=1)
+Xa = pd.concat([Xa, pd.get_dummies(pd.Series(pd.Categorical(ok["bande_alt10"].astype(str), ["0","1-2","3-9","10+"]), index=ok.index), prefix="alt", drop_first=True).astype(float)], axis=1)
 r = wls(ok["log_reviews1"], Xa, ok["poids"], ok["code_insee"]); W("\n[alternatives distinctes, spec B] log(1+avis)"); W(tab(r, ["alt_1-2","alt_3-9","alt_10+"]).to_string())
 W(f"sites déplacés de bande (alternatives vs sites) : {int((ok['bande_alt10'].astype(str)!=ok['bande10'].astype(str)).sum())}")
 # Non appariés = 0 avis

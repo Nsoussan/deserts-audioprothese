@@ -1,15 +1,15 @@
 Échantillon : 2999 sites · appariés 2966 · notés 2768 · communes 1782
-Revenu manquant (imputé 25 000 €) : 0 sites, par bande : {'0': 0, '1-2': 0, '3-9': 0, '10+': 0}
+Revenu manquant (imputé 25 000 €) : 152 sites, par bande : {'0': 5, '1-2': 3, '3-9': 5, '10+': 139}
 Statut Google fermé (CLOSED_*) : 31 sites (1.0%) ; par bande : {'0': 0.011, '1-2': 0.012, '3-9': 0.01, '10+': 0.01}
 
 === 1. Descriptives par type (pondéré) ===
                             n  owner_share  practitioners  competitors_10km  dist_nearest_km  rated  reviews_median  reviews_q75  rating_mean  website  pop_commune  income_k    apl
 type5                                                                                                                                                                               
 integrated chain        649.0         0.06           1.45             78.91             0.72   0.98            29.0         49.0         4.70     0.99     42117.62     25.74  86.41
-brand network           362.0         0.62           1.46             45.35             1.35   0.96            24.0         61.0         4.86     1.00     45150.17     25.53  83.21
-optician-hosted         323.0         0.41           1.26             72.39             0.32   0.96           152.0        283.0         4.69     0.99     45454.62     25.17  84.79
-mutualist network       173.0         0.04           1.33             29.28             0.47   0.96            27.0         58.0         4.77     0.96     41905.94     24.23  81.24
-unbranded independent  1459.0         0.64           1.29             86.66             1.23   0.91            23.0         60.0         4.81     0.88     43963.81     25.67  87.68
+brand network           354.0         0.62           1.45             45.61             1.35   0.96            24.0         63.0         4.86     1.00     45587.50     25.54  83.35
+optician-hosted         325.0         0.41           1.26             72.26             0.32   0.96           150.0        283.0         4.69     0.99     45380.49     25.16  84.73
+mutualist network       171.0         0.03           1.34             25.12             0.48   0.96            27.0         60.0         4.76     0.96     41530.26     24.24  80.72
+unbranded independent  1467.0         0.64           1.29             86.89             1.23   0.91            23.0         60.0         4.81     0.88     43933.47     25.66  87.70
 all                    2966.0         0.44           1.34             75.10             0.97   0.94            28.0         70.0         4.77     0.94     43761.11     25.52  86.15
               n  owner_share  practitioners  competitors_10km  dist_nearest_km  rated  reviews_median  reviews_q75  rating_mean  website  pop_commune  income_k    apl
 bande10                                                                                                                                                               
@@ -27,20 +27,20 @@ bande10 type5
         mutualist network        9.0  1.000            25.0   4.822
         unbranded independent  166.0  0.849             8.0   4.816
 1-2     integrated chain       183.0  0.984            20.0   4.694
-        brand network          116.0  0.966            18.0   4.844
-        optician-hosted         47.0  0.915            39.0   4.847
+        brand network          111.0  0.964            19.0   4.837
+        optician-hosted         49.0  0.918            32.0   4.851
         mutualist network       42.0  0.881            14.0   4.657
-        unbranded independent  358.0  0.891            11.0   4.776
+        unbranded independent  361.0  0.892            11.0   4.778
 3-9     integrated chain       108.0  1.000            29.0   4.742
-        brand network           49.0  0.980            21.0   4.840
+        brand network           48.0  0.979            21.0   4.845
         optician-hosted         93.0  0.968           130.0   4.690
         mutualist network       45.0  0.956            26.0   4.821
-        unbranded independent  207.0  0.870            18.0   4.837
+        unbranded independent  208.0  0.870            18.0   4.835
 10+     integrated chain       306.0  0.980            31.0   4.676
-        brand network          151.0  0.954            35.0   4.864
+        brand network          149.0  0.960            35.0   4.864
         optician-hosted        176.0  0.955           179.0   4.677
-        mutualist network       77.0  0.974            31.0   4.745
-        unbranded independent  728.0  0.929            29.0   4.809
+        mutualist network       75.0  0.973            32.0   4.740
+        unbranded independent  732.0  0.928            28.0   4.810
 
 Part de propriétaires sur site par bande : {'0': 0.521, '1-2': 0.433, '3-9': 0.44, '10+': 0.442}
 
@@ -48,178 +48,178 @@ Part de propriétaires sur site par bande : {'0': 0.521, '1-2': 0.433, '3-9': 0.
 
 [A. base] log(1+avis) · n=2966 · R2=0.135
                               coef     se      p
-bande10_1-2                  0.303  0.097  0.002
-bande10_3-9                  0.546  0.111  0.000
+bande10_1-2                  0.299  0.097  0.002
+bande10_3-9                  0.545  0.111  0.000
 bande10_10+                  0.696  0.123  0.000
-type5_brand network          0.093  0.097  0.339
-type5_optician-hosted        1.174  0.110  0.000
-type5_mutualist network     -0.008  0.108  0.939
-type5_unbranded independent  0.001  0.080  0.991
-owner                       -0.373  0.077  0.000
-npr                          0.239  0.038  0.000
-log_pop                      0.139  0.031  0.000
+type5_brand network          0.113  0.098  0.248
+type5_optician-hosted        1.170  0.110  0.000
+type5_mutualist network      0.005  0.109  0.962
+type5_unbranded independent -0.006  0.080  0.942
+owner                       -0.371  0.077  0.000
+npr                          0.238  0.038  0.000
+log_pop                      0.140  0.033  0.000
 revenu_k                     0.018  0.007  0.009
 
 [A. base] noté (LPM) · n=2966 · R2=0.027
                               coef     se      p
-bande10_1-2                  0.043  0.022  0.057
-bande10_3-9                  0.046  0.023  0.051
-bande10_10+                  0.059  0.023  0.012
-type5_brand network         -0.028  0.015  0.053
+bande10_1-2                  0.043  0.022  0.055
+bande10_3-9                  0.046  0.024  0.048
+bande10_10+                  0.060  0.023  0.011
+type5_brand network         -0.024  0.014  0.086
 type5_optician-hosted       -0.024  0.013  0.058
-type5_mutualist network     -0.016  0.016  0.331
+type5_mutualist network     -0.016  0.016  0.324
 type5_unbranded independent -0.072  0.012  0.000
-owner                        0.004  0.012  0.762
+owner                        0.004  0.012  0.768
 npr                          0.021  0.005  0.000
-log_pop                      0.000  0.005  0.962
+log_pop                     -0.000  0.005  0.973
 revenu_k                     0.003  0.001  0.001
 
-[A. base] note (notés) · n=2768 · R2=0.040
+[A. base] note (notés) · n=2768 · R2=0.041
                               coef     se      p
-bande10_1-2                 -0.038  0.035  0.285
-bande10_3-9                  0.011  0.031  0.724
-bande10_10+                 -0.015  0.034  0.650
-type5_brand network          0.130  0.022  0.000
-type5_optician-hosted       -0.036  0.025  0.151
-type5_mutualist network      0.067  0.035  0.055
-type5_unbranded independent  0.076  0.022  0.001
+bande10_1-2                 -0.039  0.035  0.271
+bande10_3-9                  0.007  0.031  0.816
+bande10_10+                 -0.018  0.034  0.587
+type5_brand network          0.129  0.022  0.000
+type5_optician-hosted       -0.034  0.025  0.166
+type5_mutualist network      0.063  0.035  0.074
+type5_unbranded independent  0.077  0.022  0.000
 owner                        0.060  0.018  0.001
 npr                         -0.034  0.013  0.007
-log_pop                     -0.009  0.008  0.244
-revenu_k                     0.003  0.002  0.115
+log_pop                     -0.006  0.008  0.428
+revenu_k                     0.003  0.002  0.117
 
 [B. + demande 65+ par site, part 65+] log(1+avis) · n=2966 · R2=0.136
                               coef     se      p
-bande10_1-2                  0.335  0.109  0.002
-bande10_3-9                  0.592  0.140  0.000
-bande10_10+                  0.724  0.149  0.000
-type5_brand network          0.097  0.098  0.322
-type5_optician-hosted        1.169  0.111  0.000
-type5_mutualist network      0.001  0.108  0.992
-type5_unbranded independent -0.010  0.080  0.905
-owner                       -0.371  0.077  0.000
-npr                          0.242  0.038  0.000
-log_pop                      0.119  0.033  0.000
-log_dem65                    0.073  0.093  0.432
-share65                     -0.009  0.005  0.068
+bande10_1-2                  0.329  0.110  0.003
+bande10_3-9                  0.588  0.142  0.000
+bande10_10+                  0.721  0.151  0.000
+type5_brand network          0.117  0.098  0.232
+type5_optician-hosted        1.164  0.110  0.000
+type5_mutualist network      0.015  0.109  0.889
+type5_unbranded independent -0.017  0.080  0.836
+owner                       -0.368  0.077  0.000
+npr                          0.241  0.038  0.000
+log_pop                      0.120  0.035  0.001
+log_dem65                    0.071  0.094  0.452
+share65                     -0.010  0.005  0.060
 revenu_k                     0.017  0.007  0.013
 
-[B. + demande 65+ par site, part 65+] noté (LPM) · n=2966 · R2=0.028
+[B. + demande 65+ par site, part 65+] noté (LPM) · n=2966 · R2=0.029
                               coef     se      p
-bande10_1-2                  0.056  0.024  0.019
-bande10_3-9                  0.066  0.027  0.015
-bande10_10+                  0.079  0.028  0.005
-type5_brand network         -0.029  0.015  0.049
-type5_optician-hosted       -0.025  0.013  0.051
-type5_mutualist network     -0.015  0.016  0.357
-type5_unbranded independent -0.073  0.012  0.000
-owner                        0.004  0.012  0.726
+bande10_1-2                  0.057  0.024  0.018
+bande10_3-9                  0.068  0.028  0.015
+bande10_10+                  0.081  0.028  0.004
+type5_brand network         -0.025  0.014  0.081
+type5_optician-hosted       -0.025  0.013  0.050
+type5_mutualist network     -0.015  0.016  0.350
+type5_unbranded independent -0.074  0.012  0.000
+owner                        0.004  0.012  0.732
 npr                          0.021  0.005  0.000
-log_pop                     -0.002  0.005  0.743
-log_dem65                    0.025  0.015  0.100
-share65                     -0.001  0.001  0.371
+log_pop                     -0.002  0.005  0.667
+log_dem65                    0.026  0.016  0.099
+share65                     -0.001  0.001  0.362
 revenu_k                     0.003  0.001  0.001
 
-[B. + demande 65+ par site, part 65+] note (notés) · n=2768 · R2=0.041
+[B. + demande 65+ par site, part 65+] note (notés) · n=2768 · R2=0.042
                               coef     se      p
-bande10_1-2                 -0.057  0.038  0.135
-bande10_3-9                 -0.018  0.039  0.648
-bande10_10+                 -0.045  0.043  0.291
-type5_brand network          0.131  0.022  0.000
-type5_optician-hosted       -0.035  0.025  0.161
-type5_mutualist network      0.066  0.035  0.058
-type5_unbranded independent  0.077  0.022  0.000
+bande10_1-2                 -0.060  0.038  0.110
+bande10_3-9                 -0.025  0.039  0.511
+bande10_10+                 -0.053  0.043  0.216
+type5_brand network          0.130  0.023  0.000
+type5_optician-hosted       -0.033  0.025  0.178
+type5_mutualist network      0.062  0.035  0.079
+type5_unbranded independent  0.078  0.021  0.000
 owner                        0.059  0.018  0.001
 npr                         -0.034  0.013  0.007
-log_pop                     -0.008  0.008  0.356
-log_dem65                   -0.033  0.023  0.143
-share65                      0.000  0.001  0.767
-revenu_k                     0.003  0.002  0.136
+log_pop                     -0.005  0.008  0.573
+log_dem65                   -0.037  0.022  0.096
+share65                      0.000  0.001  0.804
+revenu_k                     0.003  0.002  0.142
 
 [PPML] nombre d'avis ~ spec B
                               coef     se      p
-bande10_1-2                  0.480  0.207  0.020
-bande10_3-9                  1.035  0.390  0.008
-bande10_10+                  1.301  0.390  0.001
-type5_brand network          0.542  0.130  0.000
-type5_optician-hosted        1.701  0.097  0.000
-type5_mutualist network      0.166  0.122  0.175
-type5_unbranded independent  0.975  0.181  0.000
+bande10_1-2                  0.475  0.207  0.022
+bande10_3-9                  1.034  0.389  0.008
+bande10_10+                  1.299  0.390  0.001
+type5_brand network          0.554  0.130  0.000
+type5_optician-hosted        1.700  0.097  0.000
+type5_mutualist network      0.177  0.122  0.149
+type5_unbranded independent  0.970  0.182  0.000
 owner                       -0.550  0.172  0.001
 npr                          0.151  0.063  0.016
-log_pop                     -0.108  0.107  0.312
-log_dem65                    0.076  0.221  0.730
+log_pop                     -0.108  0.107  0.310
+log_dem65                    0.076  0.220  0.732
 share65                     -0.049  0.013  0.000
-revenu_k                     0.002  0.016  0.888
+revenu_k                     0.002  0.016  0.883
 
 [Logit] noté ~ spec B (coefficients log-odds)
                               coef     se      p
-bande10_1-2                  0.671  0.292  0.021
-bande10_3-9                  0.809  0.375  0.031
-bande10_10+                  1.069  0.422  0.011
-type5_brand network         -1.060  0.454  0.019
-type5_optician-hosted       -0.976  0.439  0.026
-type5_mutualist network     -0.784  0.527  0.136
-type5_unbranded independent -1.791  0.365  0.000
-owner                        0.062  0.188  0.740
-npr                          0.577  0.199  0.004
-log_pop                     -0.025  0.092  0.787
-log_dem65                    0.418  0.263  0.112
-share65                     -0.010  0.014  0.459
+bande10_1-2                  0.674  0.292  0.021
+bande10_3-9                  0.814  0.375  0.030
+bande10_10+                  1.074  0.422  0.011
+type5_brand network         -0.971  0.461  0.035
+type5_optician-hosted       -0.974  0.439  0.026
+type5_mutualist network     -0.801  0.527  0.129
+type5_unbranded independent -1.797  0.365  0.000
+owner                        0.060  0.188  0.750
+npr                          0.575  0.199  0.004
+log_pop                     -0.026  0.092  0.779
+log_dem65                    0.417  0.262  0.112
+share65                     -0.011  0.014  0.442
 revenu_k                     0.075  0.026  0.004
 
 [continu] log(1+avis) ~ log(1+concurrents 10 km) + log(1+distance au plus proche) + contrôles B
                               coef     se      p
-type5_brand network          0.121  0.098  0.214
-type5_optician-hosted        1.173  0.111  0.000
-type5_mutualist network      0.024  0.109  0.824
-type5_unbranded independent  0.002  0.081  0.976
-owner                       -0.368  0.077  0.000
-npr                          0.244  0.037  0.000
+type5_brand network          0.137  0.098  0.161
+type5_optician-hosted        1.170  0.110  0.000
+type5_mutualist network      0.038  0.109  0.727
+type5_unbranded independent -0.004  0.080  0.964
+owner                       -0.366  0.077  0.000
+npr                          0.243  0.037  0.000
 log_pop                      0.070  0.039  0.071
-log_dem65                    0.114  0.093  0.223
-share65                     -0.009  0.005  0.083
-revenu_k                     0.013  0.007  0.073
-log_comp                     0.093  0.031  0.003
-log_dist                    -0.182  0.045  0.000
+log_dem65                    0.122  0.093  0.192
+share65                     -0.009  0.005  0.111
+revenu_k                     0.011  0.008  0.159
+log_comp                     0.113  0.035  0.001
+log_dist                    -0.173  0.046  0.000
 
 [alternatives distinctes, spec B] log(1+avis)
           coef     se      p
-alt_1-2  0.330  0.110  0.003
-alt_3-9  0.604  0.138  0.000
-alt_10+  0.730  0.151  0.000
-sites déplacés de bande (alternatives vs sites) : 63
+alt_1-2  0.322  0.110  0.004
+alt_3-9  0.608  0.141  0.000
+alt_10+  0.707  0.152  0.000
+sites déplacés de bande (alternatives vs sites) : 58
 
 [robustesse] noté, non appariés recodés à 0 avis · n=2999
               coef     se      p
-bande10_1-2  0.070  0.025  0.006
-bande10_3-9  0.085  0.029  0.003
-bande10_10+  0.095  0.029  0.001
+bande10_1-2  0.086  0.026  0.001
+bande10_3-9  0.102  0.030  0.001
+bande10_10+  0.107  0.030  0.000
 part notée par bande, non appariés à 0 : {'0': 0.842, '1-2': 0.916, '3-9': 0.931, '10+': 0.94}
 
-[interaction bande x indépendant] log(1+avis) : Wald p = 0.190 ; coefs                       coef     se      p
-bande10_1-2_x_indep -0.231  0.191  0.226
-bande10_3-9_x_indep -0.229  0.207  0.269
-bande10_10+_x_indep -0.004  0.180  0.981
+[interaction bande x indépendant] log(1+avis) : Wald p = 0.194 ; coefs                       coef     se      p
+bande10_1-2_x_indep -0.245  0.191  0.198
+bande10_3-9_x_indep -0.239  0.207  0.249
+bande10_10+_x_indep -0.021  0.180  0.906
 
-[sans opticiens] log(1+avis) · n=2643
+[sans opticiens] log(1+avis) · n=2641
                               coef     se      p
-bande10_1-2                  0.325  0.110  0.003
-bande10_3-9                  0.552  0.144  0.000
-bande10_10+                  0.728  0.154  0.000
-owner                       -0.229  0.084  0.006
-type5_unbranded independent -0.094  0.083  0.254
+bande10_1-2                  0.335  0.110  0.002
+bande10_3-9                  0.567  0.147  0.000
+bande10_10+                  0.743  0.157  0.000
+owner                       -0.226  0.084  0.007
+type5_unbranded independent -0.105  0.083  0.206
 
 Kruskal-Wallis (non pondéré) avis ~ bande : H=236.8 p=4.8e-51 ; note ~ bande : H=28.7 p=2.6e-06
 
 === 3. Niveau des notes selon le seuil d'avis, avec et sans contrôle de log(avis) ===
  seuil  ctrl_log_avis    n   bande10_1-2   bande10_3-9   bande10_10+         owner         indep      log_avis
-     1          False 2768 -0.057 (0.13) -0.018 (0.65) -0.045 (0.29) +0.059 (0.00) +0.077 (0.00)              
-     1           True 2768 -0.060 (0.12) -0.025 (0.53) -0.054 (0.22) +0.065 (0.00) +0.074 (0.00) +0.013 (0.18)
-    10          False 2128 -0.026 (0.29) -0.065 (0.04) -0.078 (0.02) +0.045 (0.00) +0.096 (0.00)              
-    10           True 2128 -0.026 (0.29) -0.065 (0.04) -0.078 (0.02) +0.045 (0.00) +0.097 (0.00) -0.000 (0.96)
-    30          False 1282 -0.003 (0.92) -0.069 (0.06) -0.069 (0.07) +0.054 (0.00) +0.058 (0.01)              
-    30           True 1282 -0.004 (0.88) -0.069 (0.07) -0.060 (0.11) +0.046 (0.01) +0.080 (0.00) -0.041 (0.01)
+     1          False 2768 -0.060 (0.11) -0.025 (0.51) -0.053 (0.22) +0.059 (0.00) +0.078 (0.00)              
+     1           True 2768 -0.064 (0.10) -0.032 (0.41) -0.061 (0.16) +0.065 (0.00) +0.075 (0.00) +0.013 (0.18)
+    10          False 2128 -0.031 (0.21) -0.074 (0.02) -0.086 (0.01) +0.046 (0.00) +0.097 (0.00)              
+    10           True 2128 -0.031 (0.21) -0.074 (0.02) -0.086 (0.01) +0.046 (0.00) +0.097 (0.00) -0.001 (0.95)
+    30          False 1282 -0.006 (0.83) -0.075 (0.04) -0.074 (0.05) +0.054 (0.00) +0.059 (0.01)              
+    30           True 1282 -0.008 (0.79) -0.074 (0.04) -0.065 (0.08) +0.046 (0.01) +0.080 (0.00) -0.041 (0.01)
 
 Moyenne des notes pondérée par le nombre d'avis, par bande : {'0': 4.865, '1-2': 4.845, '3-9': 4.639, '10+': 4.599}
 
@@ -237,13 +237,13 @@ bin
 Dispersion résiduelle (note ~ log avis x bande + type + propriétaire + praticiens) :
               n  resid_sd  resid_iqr
 bande10                             
-0         245.0     0.408      0.181
-1-2       691.0     0.493      0.305
+0         245.0     0.408      0.179
+1-2       691.0     0.494      0.306
 3-9       469.0     0.257      0.214
 10+      1363.0     0.366      0.248
-Brown-Forsythe sur résidus (4 bandes) : W=6.66, p=0.000177
-Brown-Forsythe ≤2 vs ≥3 concurrents : W=10.78, p=0.00104
-IC 95 % bootstrap par communes de l'écart-type résiduel : {'0': (np.float64(0.238), np.float64(0.575)), '1-2': (np.float64(0.381), np.float64(0.603)), '3-9': (np.float64(0.221), np.float64(0.289)), '10+': (np.float64(0.312), np.float64(0.416))}
+Brown-Forsythe sur résidus (4 bandes) : W=6.74, p=0.000159
+Brown-Forsythe ≤2 vs ≥3 concurrents : W=10.90, p=0.000972
+IC 95 % bootstrap par communes de l'écart-type résiduel : {'0': (np.float64(0.238), np.float64(0.575)), '1-2': (np.float64(0.382), np.float64(0.603)), '3-9': (np.float64(0.221), np.float64(0.289)), '10+': (np.float64(0.312), np.float64(0.416))}
 
 Quart supérieur d'avis au sein de chaque bande :
              n  min_reviews     sd   mean  below45
@@ -274,101 +274,101 @@ Dispersion résiduelle sans opticiens :
               n  resid_sd
 bande10                  
 0         239.0     0.410
-1-2       648.0     0.504
+1-2       646.0     0.505
 3-9       379.0     0.244
 10+      1195.0     0.371
 
 Part de 5,0 ~ bandes + tranches d'avis + type + propriétaire :
                               coef     se      p
-bande10_1-2                 -0.016  0.034  0.636
-bande10_3-9                 -0.009  0.036  0.798
+bande10_1-2                 -0.016  0.034  0.637
+bande10_3-9                 -0.009  0.036  0.796
 bande10_10+                  0.049  0.037  0.190
-type5_unbranded independent  0.245  0.025  0.000
-owner                        0.100  0.022  0.000
+type5_unbranded independent  0.244  0.025  0.000
+owner                        0.101  0.022  0.000
 
 === 5. Effets fixes commune ===
 communes à ≥2 sites appariés : 684 · sites : 1868 · composition par bande : {'10+': 1011, '1-2': 579, '3-9': 278, '0': 0}
 
 FE commune · log(1+avis) · n=1868
                                     coef     se      p
-Intercept                          3.410  0.106  0.000
-C(type5)[T.brand network]          0.130  0.197  0.511
-C(type5)[T.optician-hosted]        1.056  0.202  0.000
-C(type5)[T.mutualist network]     -0.100  0.191  0.600
-C(type5)[T.unbranded independent] -0.083  0.152  0.586
-owner                             -0.231  0.148  0.118
-npr                                0.216  0.072  0.003
+Intercept                          3.409  0.106  0.000
+C(type5)[T.brand network]          0.115  0.197  0.559
+C(type5)[T.optician-hosted]        1.050  0.202  0.000
+C(type5)[T.mutualist network]     -0.073  0.190  0.699
+C(type5)[T.unbranded independent] -0.086  0.151  0.572
+owner                             -0.226  0.147  0.124
+npr                                0.217  0.072  0.002
 
 FE commune · noté · n=1868
                                     coef     se      p
-Intercept                          1.010  0.019  0.000
-C(type5)[T.brand network]         -0.014  0.030  0.646
-C(type5)[T.optician-hosted]       -0.008  0.024  0.758
-C(type5)[T.mutualist network]     -0.005  0.032  0.870
-C(type5)[T.unbranded independent] -0.048  0.022  0.031
-owner                              0.004  0.022  0.858
-npr                                0.021  0.013  0.114
+Intercept                          1.009  0.018  0.000
+C(type5)[T.brand network]         -0.016  0.030  0.603
+C(type5)[T.optician-hosted]       -0.008  0.024  0.751
+C(type5)[T.mutualist network]     -0.005  0.032  0.874
+C(type5)[T.unbranded independent] -0.047  0.022  0.031
+owner                              0.004  0.022  0.861
+npr                                0.021  0.013  0.111
 
 FE commune · note · n=1758
                                     coef     se      p
-Intercept                          4.879  0.042  0.000
+Intercept                          4.878  0.041  0.000
 C(type5)[T.brand network]          0.162  0.048  0.001
-C(type5)[T.optician-hosted]       -0.005  0.048  0.910
-C(type5)[T.mutualist network]      0.056  0.072  0.441
-C(type5)[T.unbranded independent]  0.082  0.046  0.072
-owner                              0.064  0.040  0.107
-npr                               -0.056  0.031  0.072
+C(type5)[T.optician-hosted]       -0.005  0.048  0.917
+C(type5)[T.mutualist network]      0.050  0.073  0.495
+C(type5)[T.unbranded independent]  0.084  0.046  0.066
+owner                              0.064  0.040  0.112
+npr                               -0.055  0.031  0.073
 
 FE commune · site web · n=1868
                                     coef     se      p
 Intercept                          0.732  0.019  0.000
-C(type5)[T.brand network]          0.004  0.023  0.867
-C(type5)[T.optician-hosted]        0.021  0.019  0.271
-C(type5)[T.mutualist network]     -0.023  0.034  0.499
+C(type5)[T.brand network]          0.004  0.023  0.856
+C(type5)[T.optician-hosted]        0.020  0.019  0.279
+C(type5)[T.mutualist network]     -0.023  0.035  0.507
 C(type5)[T.unbranded independent] -0.114  0.024  0.000
-owner                             -0.007  0.027  0.794
-npr                                0.013  0.015  0.384
+owner                             -0.007  0.027  0.789
+npr                                0.013  0.015  0.371
 
 === 6. Revenu (terciles) et entrants ===
-log(1+avis) : T2 +0.011 (p=0.88) · T3 +0.137 (p=0.08)
-noté : T2 +0.013 (p=0.29) · T3 +0.021 (p=0.08)
-note : T2 +0.014 (p=0.48) · T3 +0.035 (p=0.10)
-entrant · log(1+avis) : -0.093 (se 0.107, p=0.38, IC95 [-0.30;+0.12]) n=2761
-entrant · noté : +0.010 (se 0.016, p=0.55, IC95 [-0.02;+0.04]) n=2761
-entrant · note : +0.040 (se 0.032, p=0.21, IC95 [-0.02;+0.10]) n=2576
+log(1+avis) : T2 +0.010 (p=0.90) · T3 +0.137 (p=0.08)
+noté : T2 +0.011 (p=0.37) · T3 +0.021 (p=0.09)
+note : T2 +0.025 (p=0.19) · T3 +0.035 (p=0.09)
+entrant · log(1+avis) : -0.068 (se 0.106, p=0.52, IC95 [-0.28;+0.14]) n=2761
+entrant · noté : +0.012 (se 0.016, p=0.44, IC95 [-0.02;+0.04]) n=2761
+entrant · note : +0.042 (se 0.032, p=0.20, IC95 [-0.02;+0.10]) n=2576
 entrants dans l'échantillon apparié : 445 ; 2022 inconnu : 205
 
 === 7. Sites web (erreurs groupées par domaine) ===
                             n  prix_affiche  grille_tarifs  sante100  classe2  essai_gratuit  bilan_gratuit  rdv_en_ligne  devis  garantie_suivi
 type5                                                                                                                                           
-integrated chain        640.0         0.518          0.917     0.997    0.945          0.992          0.993         0.993  0.959           0.997
-brand network           358.0         0.122          0.138     0.948    0.285          0.874          0.861         0.985  0.732           0.858
-optician-hosted         320.0         0.000          0.037     0.519    0.000          0.853          0.888         0.938  0.566           0.926
-mutualist network       164.0         0.008          0.008     0.074    0.008          0.936          0.789         0.936  0.786           0.084
-unbranded independent  1220.0         0.053          0.071     0.636    0.248          0.548          0.589         0.793  0.403           0.620
+integrated chain        640.0         0.917          0.942     0.997    0.949          0.992          0.993         0.792  0.959           0.984
+brand network           350.0         0.221          0.264     0.951    0.698          0.864          0.865         0.588  0.738           0.848
+optician-hosted         322.0         0.212          0.249     0.472    0.416          0.879          0.888         0.346  0.676           0.836
+mutualist network       163.0         0.008          0.008     0.059    0.026          0.788          0.795         0.075  0.792           0.061
+unbranded independent  1231.0         0.109          0.146     0.587    0.343          0.576          0.591         0.374  0.411           0.569
 
 Par marque (sites lus, part) :
                                 n  prix  page_tarifs  sante100
 brand                                                         
-Amplifon                    233.0  0.00         1.00      1.00
-Audika                      216.0  0.98         0.99      1.00
-Écouter Voir / mutualiste   164.0  0.01         0.01      0.07
-Optical Center              140.0  0.00         0.00      0.03
+Amplifon                    233.0  1.00         1.00      1.00
+Audika                      216.0  0.99         0.99      1.00
+Écouter Voir / mutualiste   163.0  0.01         0.01      0.06
+Optical Center              140.0  0.00         0.00      0.00
 Audilab                     121.0  0.02         0.02      1.00
-Audition Santé (Sonova)     119.0  0.96         0.96      0.98
-Krys Audition                78.0  0.00         0.00      1.00
-Alain Afflelou Acousticien   65.0  0.00         0.00      1.00
+Audition Santé (Sonova)     119.0  0.96         0.97      0.98
+Krys Audition                80.0  0.00         0.00      1.00
+Alain Afflelou Acousticien   65.0  0.98         0.98      1.00
 Audition Conseil             59.0  0.68         0.68      0.86
-Entendre                     53.0  0.02         0.08      0.94
-Sonance Audition             52.0  0.02         0.02      1.00
-Audio 2000                   43.0  0.00         0.02      0.95
+Sonance Audition             52.0  0.02         0.98      1.00
+Entendre                     45.0  0.04         0.09      0.98
+Audio 2000                   43.0  0.02         0.14      0.93
 Benoit Audition              24.0  0.00         0.00      1.00
-VivaSon                      21.0  0.00         0.00      1.00
-Audition Marc Boulet         14.0  0.00         1.00      1.00
-GrandAudition                14.0  0.00         0.00      1.00
-Atol                         12.0  0.00         0.00      1.00
+VivaSon                      21.0  1.00         0.00      1.00
+Audition Marc Boulet         14.0  1.00         1.00      1.00
+GrandAudition                14.0  0.00         1.00      1.00
 Solusons                     12.0  0.00         0.00      1.00
-Acuitis                      11.0  0.00         1.00      1.00
+Atol                         12.0  0.00         0.00      1.00
+Acuitis                      11.0  0.00         1.00      0.00
 Optic 2000                    9.0  0.00         0.00      0.00
 Idéal Audition                8.0  0.00         0.00      1.00
 Manéo Audition                8.0  0.00         0.00      1.00
@@ -378,36 +378,36 @@ Audio pour tous               1.0  0.00         0.00      0.00
 
 Indépendants non enseignés : contenu ~ bandes + contrôles (grappes communes)
            var    n   bande10_1-2   bande10_3-9   bande10_10+         owner
-  prix_affiche 1220 -0.001 (0.95) +0.029 (0.32) +0.058 (0.09) -0.006 (0.71)
- grille_tarifs 1220 -0.018 (0.48) +0.023 (0.50) +0.042 (0.26) -0.005 (0.77)
-      sante100 1220 +0.040 (0.48) +0.109 (0.12) +0.135 (0.06) +0.006 (0.85)
-       classe2 1220 -0.049 (0.32) -0.036 (0.56) -0.049 (0.46) -0.008 (0.81)
- essai_gratuit 1220 -0.055 (0.35) +0.020 (0.78) +0.022 (0.78) -0.092 (0.00)
- bilan_gratuit 1220 -0.048 (0.41) +0.024 (0.74) -0.034 (0.64) -0.092 (0.00)
-  rdv_en_ligne 1220 -0.039 (0.43) -0.022 (0.72) +0.019 (0.77) +0.018 (0.48)
-         devis 1220 -0.051 (0.37) +0.067 (0.36) +0.032 (0.68) -0.060 (0.07)
-garantie_suivi 1220 -0.007 (0.90) +0.099 (0.17) +0.045 (0.56) -0.087 (0.01)
+  prix_affiche 1231 +0.006 (0.83) +0.058 (0.14) +0.050 (0.23) +0.006 (0.75)
+ grille_tarifs 1231 -0.006 (0.89) -0.003 (0.95) +0.022 (0.69) +0.019 (0.39)
+      sante100 1231 +0.027 (0.63) +0.032 (0.66) +0.082 (0.27) +0.027 (0.40)
+       classe2 1231 -0.003 (0.95) +0.004 (0.96) -0.029 (0.71) -0.014 (0.65)
+ essai_gratuit 1231 -0.014 (0.81) +0.042 (0.56) -0.014 (0.85) -0.078 (0.01)
+ bilan_gratuit 1231 -0.050 (0.39) +0.021 (0.76) -0.044 (0.55) -0.086 (0.01)
+  rdv_en_ligne 1231 -0.031 (0.57) +0.037 (0.59) +0.098 (0.19) +0.094 (0.00)
+         devis 1231 -0.034 (0.55) +0.057 (0.42) +0.007 (0.93) -0.077 (0.02)
+garantie_suivi 1231 +0.017 (0.77) +0.042 (0.57) -0.013 (0.87) -0.079 (0.02)
 
 Notes ~ chaque variable de contenu + bandes + type5 + contrôles (grappes domaine) :
            var           y   coef    se     p    n
-  prix_affiche log(1+avis)  0.001 0.151 0.994 2702
-  prix_affiche        note  0.008 0.043 0.849 2572
- grille_tarifs log(1+avis) -0.027 0.174 0.878 2702
- grille_tarifs        note -0.050 0.039 0.204 2572
-      sante100 log(1+avis) -0.430 0.305 0.158 2702
-      sante100        note  0.122 0.026 0.000 2572
-       classe2 log(1+avis)  0.077 0.204 0.706 2702
-       classe2        note  0.023 0.024 0.346 2572
- essai_gratuit log(1+avis)  0.203 0.189 0.282 2702
- essai_gratuit        note  0.044 0.026 0.090 2572
- bilan_gratuit log(1+avis) -0.021 0.179 0.907 2702
- bilan_gratuit        note  0.040 0.026 0.116 2572
-  rdv_en_ligne log(1+avis)  0.102 0.187 0.585 2702
-  rdv_en_ligne        note  0.027 0.034 0.415 2572
-         devis log(1+avis)  0.608 0.244 0.013 2702
-         devis        note -0.047 0.033 0.154 2572
-garantie_suivi log(1+avis)  0.291 0.146 0.046 2702
-garantie_suivi        note  0.041 0.023 0.078 2572
+  prix_affiche log(1+avis) -0.131 0.358 0.714 2706
+  prix_affiche        note -0.006 0.037 0.876 2576
+ grille_tarifs log(1+avis) -0.197 0.315 0.532 2706
+ grille_tarifs        note  0.013 0.036 0.708 2576
+      sante100 log(1+avis) -0.556 0.310 0.073 2706
+      sante100        note  0.121 0.029 0.000 2576
+       classe2 log(1+avis) -0.192 0.293 0.513 2706
+       classe2        note  0.082 0.030 0.007 2576
+ essai_gratuit log(1+avis) -0.012 0.171 0.946 2706
+ essai_gratuit        note  0.045 0.025 0.078 2576
+ bilan_gratuit log(1+avis) -0.008 0.178 0.966 2706
+ bilan_gratuit        note  0.041 0.026 0.112 2576
+  rdv_en_ligne log(1+avis) -0.252 0.208 0.226 2706
+  rdv_en_ligne        note  0.004 0.029 0.894 2576
+         devis log(1+avis)  0.420 0.256 0.101 2706
+         devis        note -0.038 0.034 0.261 2576
+garantie_suivi log(1+avis) -0.050 0.144 0.728 2706
+garantie_suivi        note  0.039 0.027 0.139 2576
 
 === 8. Traçabilité ===
 Part de notes = 5,0 par bande (notés, pondéré) : {'0': 0.506, '1-2': 0.401, '3-9': 0.322, '10+': 0.349}
@@ -427,17 +427,17 @@ bande10 terc
 10+     T1    390.0  0.946            36.0   4.739
         T2    475.0  0.939            34.0   4.754
         T3    573.0  0.956            31.0   4.793
-sites avec site web référencé : 2778 ; domaines distincts : 639 ; sites lus : 2702
+sites avec site web référencé : 2778 ; domaines distincts : 639 ; sites lus : 2706
 couche sites : 8481 structures, 8421 retail ; bandes 10 km : {'0': 291, '1-2': 754, '3-9': 1903, '10+': 5473} ; part ≥10 concurrents à 30 km : 0.969
-Google : listings trouvés 2966 / 2999 ; appariés 2966 ; non appariés 33
+Google : listings trouvés 2997 / 2999 ; appariés 2966 ; non appariés 33
 lignes de collecte Google (dont re-requêtes) : 3224
 Indépendants, parts brutes par bande (site lu) :
              n   prix  page_tarifs  sante100
 bande10                                     
-0        138.0  0.043        0.058     0.638
-1-2      302.0  0.026        0.033     0.623
-3-9      176.0  0.045        0.068     0.659
-10+      604.0  0.060        0.078     0.631
+0        139.0  0.058        0.137     0.626
+1-2      306.0  0.062        0.121     0.598
+3-9      178.0  0.124        0.129     0.579
+10+      608.0  0.113        0.155     0.586
 
 === 9. Benchmark coiffeurs (mêmes communes) ===
 salons : 2574 ; communes : 879 ; moyenne globale des notes : 4.735

@@ -24,3 +24,15 @@ ratings/figures_v2.log
 src/__pycache__/
 ratings/__pycache__/
 ratings/figures_v22.log
+ratings/validation/
+ratings/websites_pages_v2.jsonl
+ratings/rpps_audio_lignes.csv
+ratings/sample_new.csv
+ratings/*.log
+v2.3_bundle.zip
+v2.2_bundle.zip
+ratings/websites_pages_v2_dom.jsonl
+ratings/validation/
+ratings/*.log
+ratings/rpps_audio_lignes.csv
+ratings/sample_new.csv

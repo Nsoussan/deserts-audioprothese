@@ -1,0 +1,196 @@
+=== A. Effet plafond : quart supérieur d'avis par bande ===
+             n   mean     sd  share_5.0  share_4.9plus
+bande10                                               
+0         62.0  4.877  0.150      0.355          0.710
+1-2      174.0  4.864  0.139      0.253          0.690
+3-9      118.0  4.731  0.248      0.144          0.449
+10+      341.0  4.747  0.298      0.188          0.507
+Levene groupé avec log(avis) : |écart à la médiane de bande| ~ bandes + forme + propriétaire + log avis
+              coef     se      p
+bande10_1-2 -0.034  0.022  0.120
+bande10_3-9 -0.027  0.033  0.411
+bande10_10+ -0.028  0.037  0.438
+log_reviews  0.064  0.027  0.018
+  test 4 bandes p = 0.455
+
+=== B. Une structure par fiche Google (spec B) ===
+[dédoublonné] log(1+avis) · n=2880
+              coef     se      p
+bande10_1-2  0.311  0.110  0.005
+bande10_3-9  0.562  0.142  0.000
+bande10_10+  0.687  0.152  0.000
+owner       -0.357  0.078  0.000
+[dédoublonné] noté · n=2880
+              coef     se      p
+bande10_1-2  0.054  0.024  0.025
+bande10_3-9  0.066  0.028  0.019
+bande10_10+  0.080  0.029  0.005
+owner        0.004  0.012  0.719
+[dédoublonné] note · n=2686
+              coef     se      p
+bande10_1-2 -0.048  0.035  0.176
+bande10_3-9 -0.030  0.039  0.447
+bande10_10+ -0.056  0.043  0.190
+owner        0.059  0.019  0.002
+
+centres dans les 879 communes du benchmark : log(1+avis) ~ bandes + log pop + revenu · n = 1346
+              coef     se      p
+bande10_1-2  0.341  0.114  0.003
+bande10_3-9  0.743  0.134  0.000
+bande10_10+  0.683  0.182  0.000
+liste des communes du benchmark écrite : outputs/v2/benchmark_communes.csv
+
+=== C. Audilab reclassée en chaîne intégrée ; alternatives avec Audika et Audilab fusionnées ===
+sites Audilab dans l'échantillon apparié : 121
+[Audilab = chaîne intégrée] log(1+avis) · n=2966
+                              coef     se      p
+bande10_1-2                  0.330  0.110  0.003
+bande10_3-9                  0.586  0.142  0.000
+bande10_10+                  0.719  0.151  0.000
+type5_brand network          0.084  0.116  0.465
+type5_optician-hosted        1.144  0.109  0.000
+type5_mutualist network     -0.002  0.108  0.983
+type5_unbranded independent -0.039  0.076  0.602
+owner                       -0.358  0.075  0.000
+[Audilab = chaîne intégrée] noté · n=2966
+                              coef     se      p
+bande10_1-2                  0.057  0.024  0.019
+bande10_3-9                  0.068  0.028  0.014
+bande10_10+                  0.081  0.028  0.004
+type5_brand network         -0.036  0.017  0.034
+type5_optician-hosted       -0.025  0.013  0.043
+type5_mutualist network     -0.015  0.016  0.349
+type5_unbranded independent -0.074  0.011  0.000
+owner                        0.005  0.012  0.678
+[Audilab = chaîne intégrée] note · n=2768
+                              coef     se      p
+bande10_1-2                 -0.059  0.038  0.117
+bande10_3-9                 -0.028  0.039  0.464
+bande10_10+                 -0.055  0.043  0.195
+type5_brand network          0.118  0.024  0.000
+type5_optician-hosted       -0.049  0.023  0.035
+type5_mutualist network      0.048  0.035  0.171
+type5_unbranded independent  0.060  0.020  0.003
+owner                        0.067  0.018  0.000
+sites de l'échantillon changeant de bande d'alternatives avec la fusion Demant : 23
+[alternatives distinctes, Demant fusionné] log(1+avis)
+           coef     se      p
+altd_1-2  0.329  0.110  0.003
+altd_3-9  0.604  0.141  0.000
+altd_10+  0.719  0.153  0.000
+
+=== D. Corners opticiens : fiche du magasin ou fiche propre ===
+types Google des corners (premiers) : {'store': 319, 'electronics_store': 5, 'shopping_mall': 1}
+                              n  shop_listing  owner  median_reviews  rating
+brand                                                                       
+Acuitis                      11           1.0   0.27           150.0    4.87
+Alain Afflelou Acousticien   66           0.0   0.68            17.0    4.77
+Atol                         13           1.0   0.54            65.0    4.87
+Generale d'Optique            3           1.0   0.67           417.0    4.80
+Krys Audition                81           0.0   0.48            12.0    4.90
+Lissac                        2           1.0   1.00           287.0    4.75
+Optic 2000                    9           1.0   0.56            59.0    4.78
+Optical Center              140           1.0   0.24           239.5    4.55
+[type6] log(1+avis) · n=2966
+                              coef     se      p
+bande10_1-2                  0.359  0.109  0.001
+bande10_3-9                  0.565  0.141  0.000
+bande10_10+                  0.732  0.149  0.000
+type6_brand network          0.058  0.097  0.555
+type6_corner, shop listing   1.979  0.092  0.000
+type6_corner, own listing   -0.042  0.180  0.815
+type6_mutualist network      0.015  0.109  0.889
+type6_unbranded independent -0.076  0.080  0.341
+owner                       -0.267  0.075  0.000
+[type6] noté · n=2966
+                              coef     se      p
+bande10_1-2                  0.059  0.024  0.015
+bande10_3-9                  0.067  0.028  0.017
+bande10_10+                  0.081  0.028  0.004
+type6_brand network         -0.028  0.014  0.049
+type6_corner, shop listing   0.017  0.007  0.010
+type6_corner, own listing   -0.087  0.028  0.002
+type6_mutualist network     -0.015  0.016  0.350
+type6_unbranded independent -0.077  0.012  0.000
+owner                        0.009  0.012  0.438
+[type6] note · n=2768
+                              coef     se      p
+bande10_1-2                 -0.063  0.038  0.096
+bande10_3-9                 -0.022  0.039  0.563
+bande10_10+                 -0.053  0.042  0.213
+type6_brand network          0.136  0.023  0.000
+type6_corner, shop listing  -0.113  0.028  0.000
+type6_corner, own listing    0.098  0.031  0.002
+type6_mutualist network      0.062  0.035  0.079
+type6_unbranded independent  0.084  0.021  0.000
+owner                        0.049  0.018  0.008
+propriétaire × forme (type6), log(1+avis) :
+                                      coef     se      p
+owner                               -0.079  0.170  0.640
+owner_x_type6_corner, shop listing   0.110  0.241  0.648
+owner_x_type6_corner, own listing   -1.006  0.381  0.008
+owner_x_type6_brand network         -0.138  0.231  0.551
+owner_x_type6_unbranded independent -0.165  0.199  0.406
+
+=== E. Accessibilité (APL v2.1) : terciles pondérés dans l'échantillon apparié ===
+bornes des terciles d'APL : [np.float64(72.4), np.float64(98.9)]
+                      n  rated  reviews_median  rating
+bande10 apl_terc                                      
+0       A1        238.0  0.857             8.0   4.813
+        A2         37.0  1.000            12.0   4.819
+        A3          5.0  0.800            16.0   5.000
+1-2     A1        575.0  0.920            17.0   4.755
+        A2        138.0  0.964            11.0   4.786
+        A3         33.0  0.879            12.0   4.817
+3-9     A1        309.0  0.935            27.0   4.777
+        A2        165.0  0.933            22.0   4.786
+        A3         28.0  0.929            28.0   4.881
+10+     A1        213.0  0.953            36.0   4.716
+        A2        527.0  0.947            29.0   4.787
+        A3        698.0  0.947            35.0   4.766
+log(1+avis) : A2 -0.192 (p=0.02) · A3 -0.072 (p=0.47) ; bandes [np.float64(0.344), np.float64(0.637), np.float64(0.821)]
+noté : A2 +0.005 (p=0.70) · A3 -0.006 (p=0.70) ; bandes [np.float64(0.055), np.float64(0.063), np.float64(0.076)]
+note : A2 +0.037 (p=0.08) · A3 +0.037 (p=0.16) ; bandes [np.float64(-0.057), np.float64(-0.024), np.float64(-0.065)]
+log(1+avis) : log(1+APL) -0.158 (se 0.116, p=0.17) ; bandes [np.float64(0.323), np.float64(0.584), np.float64(0.753)]
+noté : log(1+APL) -0.014 (se 0.018, p=0.43) ; bandes [np.float64(0.056), np.float64(0.067), np.float64(0.084)]
+note : log(1+APL) +0.076 (se 0.032, p=0.02) ; bandes [np.float64(-0.057), np.float64(-0.023), np.float64(-0.067)]
+corrélation de Spearman APL / avis : 0.159 ; APL / note : 0.026
+
+=== F. Concurrence à 20 km ===
+effectifs (échantillon apparié) par bande à 20 km : {'0': 33, '1-2': 173, '3-9': 493, '10+': 2267} ; pondérés : {'0': 33.0, '1-2': 173.0, '3-9': 976.0, '10+': 7167.0}
+              n  rated  reviews_median  rating
+bande20                                       
+0          33.0  0.788             7.0   4.831
+1-2       173.0  0.896            14.0   4.683
+3-9       493.0  0.924            21.0   4.767
+10+      2267.0  0.944            30.0   4.774
+[bandes 20 km] log(1+avis)
+              coef     se      p
+bande20_1-2  0.355  0.239  0.137
+bande20_3-9  0.570  0.228  0.012
+bande20_10+  0.652  0.225  0.004
+[bandes 20 km] noté
+              coef     se      p
+bande20_1-2  0.101  0.074  0.171
+bande20_3-9  0.126  0.071  0.075
+bande20_10+  0.137  0.070  0.051
+[bandes 20 km] note
+              coef     se      p
+bande20_1-2 -0.144  0.066  0.030
+bande20_3-9 -0.045  0.055  0.407
+bande20_10+ -0.029  0.054  0.594
+log(1+avis) : log(1+concurrents 20 km) en plus des bandes 10 km : +0.049 (se 0.035) ; bandes 10 km [np.float64(0.316), np.float64(0.566), np.float64(0.645)]
+quart supérieur par bande à 20 km : {'0': {'n': 7.0, 'sd': 0.088}, '1-2': {'n': 39.0, 'sd': 0.159}, '3-9': {'n': 114.0, 'sd': 0.217}, '10+': {'n': 541.0, 'sd': 0.273}}
+
+=== G. Coiffeurs dans la fenêtre 30-90 avis ===
+             n     sd   mean  below45
+bande10                              
+0        442.0  0.194  4.724    0.079
+1-2      313.0  0.202  4.732    0.086
+3-9      216.0  0.211  4.781    0.051
+10+      183.0  0.245  4.753    0.098
+Brown-Forsythe coiffeurs 30-90, ≤2 vs ≥3 : W=0.03, p=0.868
+
+=== H. Mesures de concurrence aux centroïdes d'arrondissement (Paris, Lyon, Marseille) ===
+sites d'arrondissement : 558 ; sites retail dont le compte à 10 km change : 2585 ; dont la bande change : 22 {('10+', '3-9'): 15, ('3-9', '1-2'): 7}
+sites de l'échantillon dont la bande change : 8

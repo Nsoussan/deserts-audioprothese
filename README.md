@@ -34,7 +34,7 @@ L'analyse complète — méthodes, 15 figures, 18 tableaux, 11 annexes dont l'in
 | `data/processed/communes_scoring_2026_v21.csv` | Même jeu, APL recalculée avec les 45 arrondissements de Paris, Lyon et Marseille (v2.1) |
 | `data/geo/arrondissements_centroides.csv` · `src/apl_v21.py` | Centroïdes des arrondissements (API Découpage administratif) et recalcul 2SFCA |
 | `outputs/tables/apl_v20_v21_comparaison.csv` | Comparaison APL v2.0 / v2.1 par zone |
-| `ratings/` | Étude complémentaire *Ratings Without Exit* (document de travail v2.2, en anglais, [doi:10.5281/zenodo.22286005](https://doi.org/10.5281/zenodo.22286005), toutes versions) : notes Google d'un échantillon stratifié de 2 999 des 8 421 centres (exhaustif pour les centres à moins de trois concurrents) et concurrence locale, sites web, benchmark coiffeurs ; couche établissement publique `sites_public_v2.csv`, voir `ratings/README.md` |
+| `ratings/` | Étude complémentaire *Ratings Without Exit* (document de travail v2.3, 32 p, en anglais, [doi:10.5281/zenodo.22286005](https://doi.org/10.5281/zenodo.22286005), toutes versions) : notes Google d'un échantillon stratifié de 2 999 des 8 421 centres (exhaustif pour les centres à moins de trois concurrents) et concurrence locale, sites web, benchmark coiffeurs ; couche établissement publique `sites_public_v2.csv`, voir `ratings/README.md` |
 
 Version 2.1 (3 septembre 2026) : les 45 arrondissements de Paris, Lyon et Marseille, sans centroïde en v2.0, sont intégrés au calcul 2SFCA ; classements inchangés, APL France 75,7 → 77,7 (détail dans `CHANGELOG.md`). Les chiffres ci-dessus sont ceux du rapport v2.0.
 
@@ -79,7 +79,7 @@ RPPS — extraction en libre accès (ANS, août 2026) · Populations de référe
   type        = {Working paper},
   year        = {2026},
   month       = {9},
-  version     = {2.2},
+  version     = {2.3},
   doi         = {10.5281/zenodo.22286005},
   url         = {https://github.com/Nsoussan/deserts-audioprothese/tree/main/ratings}
 }

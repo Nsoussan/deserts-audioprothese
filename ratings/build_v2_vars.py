@@ -32,5 +32,6 @@ s["apl_v21"] = s["code_insee"].map(c.set_index("code_insee")["apl_v21"])
 s.to_csv("sites_v2.csv", index=False)
 r = s[s["retail"]]
 print(r["type5"].value_counts()); print(); print(r.groupby("type5")["owner_on_site"].mean().round(2))
+pd.DataFrame({"n": r.groupby("groupe").size(), "type5": pd.Series({g: type5(g) for g in share.index}), "owner_share": share.round(3)}).rename_axis("groupe").reset_index().sort_values("groupe").to_csv("outputs/v2/brand_classification.csv", index=False)
 print("\nclassement des marques :"); print(pd.DataFrame({"share_owner": share.round(2), "type5": pd.Series({g: type5(g) for g in share.index})}).sort_values("type5").to_string())
 print("\ndemande 65+ par site : ", r["demand65_per_site"].describe().round(0).to_string())
